@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function Hero() {
   return (
-    <section className="relative py-16 md:py-20 px-4 overflow-hidden bg-gradient-to-br from-daycare-blue/5 via-background to-daycare-green/5">
+    <section className="relative py-20 md:py-24 px-4 overflow-hidden bg-gradient-to-br from-daycare-blue/5 via-background to-daycare-green/5">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
         {/* Gradient Orbs - Reduced size */}
@@ -23,11 +23,11 @@ export function Hero() {
         </div>
 
         {/* Main Heading with Gradient Text */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 animate-slide-up">
-          <span className="block bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 animate-slide-up pb-2">
+          <span className="block bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient leading-tight pb-1">
             Great Beginnings
           </span>
-          <span className="block text-foreground mt-2">Day Care Center</span>
+          <span className="block text-foreground mt-4">Day Care Center</span>
         </h1>
 
         {/* Subtitle */}

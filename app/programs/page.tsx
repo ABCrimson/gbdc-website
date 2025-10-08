@@ -22,15 +22,24 @@ export default function ProgramsPage() {
     <>
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-daycare-blue/10 to-daycare-green/10 dark:from-daycare-blue/5 dark:to-daycare-green/5 py-16 px-4">
-          <div className="container mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-              Our Programs
-            </h1>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-              Age-appropriate care and education for children from 6 weeks to 12 years
-            </p>
+        {/* Hero Section - 2025 Glassmorphism Design */}
+        <section className="relative py-24 px-4 overflow-hidden">
+          {/* Animated gradient orbs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 right-1/4 w-96 h-96 bg-daycare-blue/20 rounded-full blur-3xl animate-float" />
+            <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-daycare-green/20 rounded-full blur-3xl animate-pulse-slow" />
+          </div>
+
+          {/* Glassmorphism container */}
+          <div className="container mx-auto text-center relative">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient">
+                Our Programs
+              </h1>
+              <p className="text-xl text-gray-800 dark:text-gray-200 max-w-2xl mx-auto leading-relaxed">
+                Age-appropriate care and education for children from 6 weeks to 12 years
+              </p>
+            </div>
           </div>
         </section>
 

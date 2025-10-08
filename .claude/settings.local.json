@@ -21,7 +21,8 @@
       "Bash(powershell:*)",
       "Bash(bunx shadcn@latest add:*)",
       "Bash(taskkill:*)",
-      "Read(//c/Users/alber/Downloads/**)"
+      "Read(//c/Users/alber/Downloads/**)",
+      "WebFetch(domain:gbdcroselle.com)"
     ],
     "deny": [],
     "ask": []
