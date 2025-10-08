@@ -50,49 +50,85 @@ export default function ProgramsPage() {
           </div>
         </section>
 
-        {/* Detailed Information */}
-        <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">
+        {/* Detailed Information - Redesigned with Modern Styling */}
+        <section className="py-20 px-4 relative overflow-hidden">
+          {/* Background gradient orbs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-daycare-blue/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-daycare-green/10 rounded-full blur-3xl" />
+          </div>
+
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
               Program Details
             </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Comprehensive information about each of our carefully designed programs
+            </p>
 
-            <div className="space-y-8">
-              {programs.map((program) => (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {programs.map((program, index) => (
                 <div
                   key={program.id}
-                  className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+                  className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-white/60 dark:bg-gray-900/60 border border-white/20 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <h3 className="text-2xl font-bold text-daycare-blue dark:text-daycare-blue mb-3">
-                    {program.name}
-                  </h3>
+                  {/* Gradient accent border */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-daycare-blue/5 to-daycare-green/5 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                  <p className="text-gray-700 dark:text-gray-300 mb-4">
-                    {program.description}
-                  </p>
-
-                  {/* Schedule */}
-                  {program.schedule && (
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                        Schedule
-                      </h4>
-                      <p className="text-sm text-gray-700 dark:text-gray-300">
-                        {program.schedule}
-                      </p>
+                  <div className="relative">
+                    {/* Header with age range badge */}
+                    <div className="flex items-start justify-between mb-4">
+                      <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
+                        {program.name}
+                      </h3>
+                      <span className="px-3 py-1 text-xs font-semibold bg-daycare-green/10 text-daycare-green rounded-full">
+                        {program.ageRange}
+                      </span>
                     </div>
-                  )}
 
-                  {/* Features */}
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                      Features
-                    </h4>
-                    <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                      {program.features.map((feature: string, idx: number) => (
-                        <li key={idx}>• {feature}</li>
-                      ))}
-                    </ul>
+                    <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                      {program.description}
+                    </p>
+
+                    {/* Schedule */}
+                    {program.schedule && (
+                      <div className="mb-6 p-4 rounded-xl bg-daycare-blue/5 dark:bg-daycare-blue/10 border border-daycare-blue/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <svg className="w-5 h-5 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">
+                            Schedule
+                          </h4>
+                        </div>
+                        <p className="text-sm text-gray-700 dark:text-gray-300 ml-7">
+                          {program.schedule}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Features with checkmarks */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <svg className="w-5 h-5 text-daycare-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">
+                          Features
+                        </h4>
+                      </div>
+                      <ul className="space-y-2 ml-7">
+                        {program.features.map((feature: string, idx: number) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
+                            <svg className="w-4 h-4 text-daycare-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               ))}
