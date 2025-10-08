@@ -19,7 +19,8 @@
       "Bash(xargs:*)",
       "Bash(done)",
       "Bash(powershell:*)",
-      "Bash(bunx shadcn@latest add:*)"
+      "Bash(bunx shadcn@latest add:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
