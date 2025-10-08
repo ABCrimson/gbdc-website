@@ -1,58 +1,122 @@
 [
   {
-    "id": "infant",
-    "name": "Infant Care",
+    "id": "infants",
+    "name": "Infants",
     "ageRange": "6 weeks - 18 months",
-    "description": "Nurturing care for our youngest learners with focus on sensory exploration, motor development, and establishing routines.",
+    "description": "Nurturing care for our youngest learners with focus on sensory exploration, motor development, and establishing routines in a safe, loving environment.",
     "features": [
       "Low teacher-to-child ratio",
       "Safe, clean environment",
       "Individualized care schedules",
       "Daily reports for parents",
-      "Age-appropriate activities"
+      "Age-appropriate activities",
+      "Baby food provided"
     ],
-    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM"
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM",
+    "pricing": {
+      "weeklyRate": "$TBD",
+      "dailyRate": "$TBD",
+      "note": "Contact us for current rates"
+    }
   },
   {
-    "id": "toddler",
-    "name": "Toddler Program",
-    "ageRange": "18 - 36 months",
-    "description": "Encouraging independence and social skills through play-based learning and structured activities.",
+    "id": "toddlers",
+    "name": "Toddlers",
+    "ageRange": "18 months - 2 years",
+    "description": "Encouraging independence and social skills through play-based learning, structured activities, and language development.",
     "features": [
       "Potty training support",
       "Language development focus",
       "Social interaction activities",
       "Creative play and arts",
-      "Outdoor play time"
+      "Outdoor play time",
+      "Music and movement"
     ],
-    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM"
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM",
+    "pricing": {
+      "weeklyRate": "$TBD",
+      "dailyRate": "$TBD",
+      "note": "Contact us for current rates"
+    }
   },
   {
-    "id": "preschool",
-    "name": "Preschool",
-    "ageRange": "3 - 5 years",
-    "description": "Preparing for kindergarten with early literacy, math concepts, and developing problem-solving skills.",
+    "id": "two-year-olds",
+    "name": "Two Year Olds",
+    "ageRange": "2 years",
+    "description": "Building foundational skills through hands-on exploration, creative expression, and developing social-emotional awareness.",
+    "features": [
+      "Structured daily curriculum",
+      "Social skills development",
+      "Early literacy introduction",
+      "Fine and gross motor activities",
+      "Creative arts and crafts",
+      "Group circle time"
+    ],
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM",
+    "pricing": {
+      "weeklyRate": "$TBD",
+      "dailyRate": "$TBD",
+      "note": "Contact us for current rates"
+    }
+  },
+  {
+    "id": "three-year-olds",
+    "name": "Three Year Olds",
+    "ageRange": "3 years",
+    "description": "Fostering curiosity and learning through age-appropriate curriculum, problem-solving activities, and cooperative play.",
+    "features": [
+      "Pre-reading and early math",
+      "Science exploration",
+      "Creative thinking activities",
+      "Cooperative play and sharing",
+      "Music and rhythm activities",
+      "Outdoor learning experiences"
+    ],
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM",
+    "pricing": {
+      "weeklyRate": "$TBD",
+      "dailyRate": "$TBD",
+      "note": "Contact us for current rates"
+    }
+  },
+  {
+    "id": "four-five-year-olds",
+    "name": "Four/Five Year Olds",
+    "ageRange": "4 - 5 years",
+    "description": "Comprehensive kindergarten preparation with early literacy, math concepts, and developing critical thinking and problem-solving skills.",
     "features": [
       "Kindergarten readiness",
       "STEAM activities",
       "Circle time and group learning",
       "Fine motor skill development",
-      "Character building"
+      "Character building",
+      "Early writing skills"
     ],
-    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM"
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM",
+    "pricing": {
+      "weeklyRate": "$TBD",
+      "dailyRate": "$TBD",
+      "note": "Contact us for current rates"
+    }
   },
   {
-    "id": "school-age",
-    "name": "School-Age Care",
+    "id": "before-after-school",
+    "name": "Before Or After School",
     "ageRange": "5 - 12 years",
-    "description": "Before and after school care with homework support, enrichment activities, and summer camp programs.",
+    "description": "Before and after school care with homework support, enrichment activities, and summer camp programs for school-age children.",
     "features": [
       "Homework assistance",
       "STEM projects",
       "Sports and physical activities",
       "Arts and crafts",
-      "Summer camp program"
+      "Summer camp program",
+      "Healthy snacks provided"
     ],
-    "schedule": "Before School: 6:00 AM - 8:30 AM | After School: 3:00 PM - 6:00 PM"
+    "schedule": "Before School: 6:00 AM - 8:30 AM | After School: 3:00 PM - 6:00 PM",
+    "pricing": {
+      "weeklyRate": "$TBD",
+      "dailyRate": "$TBD",
+      "note": "Contact us for current rates"
+    }
   }
 ]

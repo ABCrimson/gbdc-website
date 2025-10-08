@@ -15,6 +15,11 @@ interface Program {
   description: string
   features: string[]
   schedule?: string
+  pricing?: {
+    weeklyRate: string
+    dailyRate: string
+    note: string
+  }
 }
 
 export default function ProgramsPage() {
@@ -90,6 +95,33 @@ export default function ProgramsPage() {
                     <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                       {program.description}
                     </p>
+
+                    {/* Pricing */}
+                    {program.pricing && (
+                      <div className="mb-6 p-4 rounded-xl bg-daycare-green/5 dark:bg-daycare-green/10 border border-daycare-green/20">
+                        <div className="flex items-center gap-2 mb-3">
+                          <svg className="w-5 h-5 text-daycare-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <h4 className="font-semibold text-gray-900 dark:text-white">
+                            Tuition
+                          </h4>
+                        </div>
+                        <div className="ml-7 space-y-1">
+                          <p className="text-sm text-gray-700 dark:text-gray-300">
+                            <span className="font-medium">Weekly Rate:</span> {program.pricing.weeklyRate}
+                          </p>
+                          <p className="text-sm text-gray-700 dark:text-gray-300">
+                            <span className="font-medium">Daily Rate:</span> {program.pricing.dailyRate}
+                          </p>
+                          {program.pricing.note && (
+                            <p className="text-xs text-gray-600 dark:text-gray-400 italic mt-2">
+                              {program.pricing.note}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    )}
 
                     {/* Schedule */}
                     {program.schedule && (
