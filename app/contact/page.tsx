@@ -39,7 +39,7 @@ export default function ContactPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}
-              <div>
+              <div className="bg-white dark:bg-gray-900/40 border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-green to-daycare-blue bg-clip-text text-transparent">
                   Get in Touch
                 </h2>
@@ -81,10 +81,10 @@ export default function ContactPage() {
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
                       <a
-                        href="mailto:info@greatbeginningsdaycare.com"
+                        href="mailto:gbdcroselle@gmail.com"
                         className="hover:text-daycare-blue transition-colors"
                       >
-                        info@greatbeginningsdaycare.com
+                        gbdcroselle@gmail.com
                       </a>
                     </p>
                   </div>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
                   Send Us a Message
                 </h2>
-                <div className="backdrop-blur-xl bg-white/60 dark:bg-gray-900/60 border border-white/20 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
+                <div className="bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                   <ContactForm />
                 </div>
               </div>

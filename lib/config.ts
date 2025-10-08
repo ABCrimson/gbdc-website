@@ -105,8 +105,8 @@ export const contactInfo: ContactInfo = {
     state: 'IL',
     zip: '60172'
   },
-  phone: '(630) 555-1234',
-  email: 'info@greatbeginningsdaycare.com',
+  phone: '(630) 894-3440',
+  email: 'gbdcroselle@gmail.com',
   hours: {
     weekdays: '6:00 AM - 6:00 PM',
     weekends: 'Closed'

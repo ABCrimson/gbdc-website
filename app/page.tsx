@@ -184,7 +184,7 @@ export default function Home() {
                     (630) 555-1234
                   </a>
                   <a
-                    href="mailto:info@greatbeginningsdaycare.com"
+                    href="mailto:gbdcroselle@gmail.com"
                     className="inline-flex items-center gap-2 text-daycare-green hover:text-daycare-green/80 transition-colors font-medium"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

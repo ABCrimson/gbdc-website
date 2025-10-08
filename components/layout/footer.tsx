@@ -45,10 +45,10 @@ export function Footer() {
               </p>
               <p>
                 <a
-                  href="mailto:info@greatbeginningsdaycare.com"
+                  href="mailto:gbdcroselle@gmail.com"
                   className="hover:text-daycare-blue transition-colors break-all"
                 >
-                  info@greatbeginningsdaycare.com
+                  gbdcroselle@gmail.com
                 </a>
               </p>
             </div>
