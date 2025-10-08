@@ -33,8 +33,8 @@ export default function CalendarPage() {
           </div>
         </section>
 
-        {/* Calendar Section - Redesigned with Modern Styling */}
-        <section className="py-20 px-4 relative overflow-hidden">
+        {/* Calendar Section - Blue-to-Teal Gradient */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Background gradient orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/3 -left-1/4 w-80 h-80 bg-daycare-blue/10 rounded-full blur-3xl" />

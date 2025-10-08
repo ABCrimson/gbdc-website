@@ -34,8 +34,8 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contact Information & Form */}
-        <section className="py-16 px-4">
+        {/* Contact Information & Form - Blue-to-Teal Gradient */}
+        <section className="py-16 px-4 bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}

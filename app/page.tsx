@@ -30,8 +30,8 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
-        {/* About Section - Colored Background for Daycare Feel */}
-        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-daycare-blue/5 via-white to-daycare-green/5 dark:from-daycare-blue/10 dark:via-gray-950 dark:to-daycare-green/10">
+        {/* About Section - Warm Blue-to-Teal Gradient */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-daycare-yellow/10 rounded-full blur-3xl" />
@@ -40,19 +40,19 @@ export default function Home() {
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent pb-2 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">
                 Welcome to Great Beginnings
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-daycare-blue to-daycare-green mx-auto mb-8" />
+              <div className="w-20 h-1 bg-white/60 mx-auto mb-8" />
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  For over <span className="font-bold text-daycare-blue">20 years</span>, we've been providing quality childcare in Roselle, Illinois.
+                <p className="text-lg text-white/90 leading-relaxed">
+                  For over <span className="font-bold text-white">20 years</span>, we've been providing quality childcare in Roselle, Illinois.
                   Our experienced staff creates a nurturing environment where children can learn, grow, and thrive.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-white/90 leading-relaxed">
                   We offer flexible schedules, educational programs, and a safe, engaging environment
                   for children from 6 weeks to 12 years old.
                 </p>
@@ -164,8 +164,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Activities & Curriculum Section - Rich Educational Background */}
-        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-daycare-blue/8 via-white to-daycare-yellow/8 dark:from-daycare-blue/10 dark:via-gray-950 dark:to-daycare-yellow/5">
+        {/* Activities & Curriculum Section - Warm Blue-to-Teal Gradient */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Background decoration */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 right-1/3 w-96 h-96 bg-daycare-green/10 rounded-full blur-3xl" />
@@ -174,10 +174,10 @@ export default function Home() {
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-yellow bg-clip-text text-transparent pb-2 leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">
                 Our Daily Activities & Curriculum
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
                 A comprehensive approach to early childhood education with enriching activities and nutrition
               </p>
             </div>
@@ -267,7 +267,7 @@ export default function Home() {
             </div>
 
             {/* Additional highlight */}
-            <div className="text-center bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
+            <div className="text-center bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-white/20 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
                 Our comprehensive daily program ensures your child receives not only exceptional care but also the educational foundation and enrichment activities that foster creativity, curiosity, and confidence. Every aspect of our curriculum is designed with your child's development and happiness in mind.
               </p>

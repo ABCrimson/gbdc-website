@@ -22,6 +22,16 @@ interface Program {
   }
 }
 
+// Color theme for each program
+const programColors: Record<string, string> = {
+  'infants': '#EC4899',           // Pink
+  'toddlers': '#8B5CF6',          // Purple
+  'two-year-olds': '#3B82F6',    // Blue
+  'three-year-olds': '#6366F1',  // Indigo
+  'four-five-year-olds': '#06B6D4', // Cyan
+  'before-after-school': '#F97316'  // Orange
+}
+
 export default function ProgramsPage() {
   return (
     <>
@@ -55,8 +65,8 @@ export default function ProgramsPage() {
           </div>
         </section>
 
-        {/* Detailed Information - Redesigned with Modern Styling */}
-        <section className="py-20 px-4 relative overflow-hidden">
+        {/* Detailed Information - Blue-to-Teal Gradient Background */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Background gradient orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/4 -left-1/4 w-96 h-96 bg-daycare-blue/10 rounded-full blur-3xl" />
@@ -64,10 +74,10 @@ export default function ProgramsPage() {
           </div>
 
           <div className="container mx-auto max-w-6xl relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-white">
               Program Details
             </h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-center text-white/90 mb-12 max-w-2xl mx-auto">
               Comprehensive information about each of our carefully designed programs
             </p>
 
@@ -76,7 +86,11 @@ export default function ProgramsPage() {
                 <div
                   key={program.id}
                   className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                    borderTopWidth: '4px',
+                    borderTopColor: programColors[program.id] || '#3B82F6'
+                  }}
                 >
                   {/* Gradient accent border */}
                   <div className="absolute inset-0 bg-gradient-to-br from-daycare-blue/5 to-daycare-green/5 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -168,7 +182,7 @@ export default function ProgramsPage() {
 
             {/* Call to Action */}
             <div className="mt-12 text-center">
-              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-lg text-white/90 mb-6">
                 Have questions about our programs?
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
