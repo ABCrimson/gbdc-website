@@ -10,7 +10,15 @@
       "Bash(git branch:*)",
       "Bash(bun run:*)",
       "Bash(git commit:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(for:*)",
+      "Bash(do netstat -ano)",
+      "Bash(awk:*)",
+      "Bash(xargs:*)",
+      "Bash(done)",
+      "Bash(powershell:*)"
     ],
     "deny": [],
     "ask": []
