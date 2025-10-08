@@ -30,11 +30,17 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
 
-        {/* About Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* About Section - Colored Background for Daycare Feel */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-daycare-blue/5 via-white to-daycare-green/5 dark:from-daycare-blue/10 dark:via-gray-950 dark:to-daycare-green/10">
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-daycare-yellow/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-daycare-blue/10 rounded-full blur-3xl" />
+          </div>
+
+          <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent pb-2 leading-tight">
                 Welcome to Great Beginnings
               </h2>
               <div className="w-20 h-1 bg-gradient-to-r from-daycare-blue to-daycare-green mx-auto mb-8" />
@@ -91,9 +97,9 @@ export default function Home() {
                     desc: 'Age-appropriate curriculum'
                   },
                 ].map((item, i) => (
-                  <div key={i} className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div key={i} className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-800 p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-daycare-blue/30">
                     <div className="mb-3">{item.icon}</div>
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
+                    <h3 className="font-semibold mb-1 text-gray-900 dark:text-white">{item.title}</h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
                   </div>
                 ))}
@@ -102,11 +108,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Programs */}
-        <section className="py-20 px-4 bg-muted/30">
-          <div className="container mx-auto max-w-6xl">
+        {/* Featured Programs - Warm Childcare Background */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-daycare-yellow/8 via-daycare-green/5 to-daycare-blue/8 dark:from-daycare-yellow/5 dark:via-daycare-green/10 dark:to-daycare-blue/5">
+          {/* Playful background pattern */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-daycare-green/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-daycare-blue/10 rounded-full blur-3xl" />
+          </div>
+
+          <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Programs</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-green via-daycare-blue to-daycare-yellow bg-clip-text text-transparent pb-2 leading-tight">Our Programs</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Age-appropriate care and education tailored to your child's developmental stage
               </p>
@@ -152,11 +164,16 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Location Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* Location Section - Inviting Background */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-daycare-green/5 via-white to-daycare-blue/8 dark:from-daycare-green/10 dark:via-gray-950 dark:to-daycare-blue/5">
+          {/* Background decoration */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-72 h-72 bg-daycare-yellow/10 rounded-full blur-3xl" />
+          </div>
+
+          <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Visit Us</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-yellow bg-clip-text text-transparent pb-2 leading-tight">Visit Us</h2>
               <p className="text-lg text-muted-foreground">
                 Come see our beautiful facility and meet our caring staff
               </p>
@@ -181,7 +198,7 @@ export default function Home() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    (630) 555-1234
+                    (630) 894-3440
                   </a>
                   <a
                     href="mailto:gbdcroselle@gmail.com"

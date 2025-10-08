@@ -70,7 +70,7 @@ export default function ProgramsPage() {
               {programs.map((program, index) => (
                 <div
                   key={program.id}
-                  className="group relative overflow-hidden rounded-2xl backdrop-blur-xl bg-white/60 dark:bg-gray-900/60 border border-white/20 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Gradient accent border */}
