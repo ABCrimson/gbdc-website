@@ -3,13 +3,13 @@ import Link from 'next/link'
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center px-4 overflow-hidden bg-gradient-to-br from-daycare-blue/5 via-background to-daycare-green/5">
+    <section className="relative py-16 md:py-20 px-4 overflow-hidden bg-gradient-to-br from-daycare-blue/5 via-background to-daycare-green/5">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-        {/* Gradient Orbs */}
-        <div className="absolute -top-1/2 -right-1/4 w-[800px] h-[800px] bg-daycare-yellow/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute -bottom-1/2 -left-1/4 w-[600px] h-[600px] bg-daycare-blue/20 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute top-1/3 left-1/2 w-[400px] h-[400px] bg-daycare-green/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+        {/* Gradient Orbs - Reduced size */}
+        <div className="absolute -top-1/4 -right-1/4 w-[500px] h-[500px] bg-daycare-yellow/15 rounded-full blur-3xl animate-float" />
+        <div className="absolute -bottom-1/4 -left-1/4 w-[400px] h-[400px] bg-daycare-blue/15 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute top-1/3 left-1/2 w-[300px] h-[300px] bg-daycare-green/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
 
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
