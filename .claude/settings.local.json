@@ -22,7 +22,8 @@
       "Bash(bunx shadcn@latest add:*)",
       "Bash(taskkill:*)",
       "Read(//c/Users/alber/Downloads/**)",
-      "WebFetch(domain:gbdcroselle.com)"
+      "WebFetch(domain:gbdcroselle.com)",
+      "Bash(git log:*)"
     ],
     "deny": [],
     "ask": []

@@ -108,18 +108,18 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Programs - Warm Childcare Background */}
-        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-daycare-yellow/8 via-daycare-green/5 to-daycare-blue/8 dark:from-daycare-yellow/5 dark:via-daycare-green/10 dark:to-daycare-blue/5">
+        {/* Featured Programs - Blue-to-Teal Gradient */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Playful background pattern */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-daycare-green/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-daycare-blue/10 rounded-full blur-3xl" />
+            <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
           </div>
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-green via-daycare-blue to-daycare-yellow bg-clip-text text-transparent pb-2 leading-tight">Our Programs</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">Our Programs</h2>
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
                 Age-appropriate care and education tailored to your child's developmental stage
               </p>
             </div>
@@ -152,7 +152,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <Button asChild variant="outline" size="lg" className="group">
+              <Button asChild size="lg" className="group bg-white text-daycare-blue hover:bg-white/90">
                 <Link href="/programs" className="flex items-center gap-2">
                   View All Programs
                   <svg className="w-3 h-3 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -312,17 +312,17 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-gray-950 to-transparent" />
         </section>
 
-        {/* Location Section - Inviting Background */}
-        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-daycare-green/5 via-white to-daycare-blue/8 dark:from-daycare-green/10 dark:via-gray-950 dark:to-daycare-blue/5">
+        {/* Location Section - Blue-to-Teal Gradient */}
+        <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Background decoration */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-72 h-72 bg-daycare-yellow/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 left-1/4 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
           </div>
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-yellow bg-clip-text text-transparent pb-2 leading-tight">Visit Us</h2>
-              <p className="text-lg text-muted-foreground">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">Visit Us</h2>
+              <p className="text-lg text-white/90">
                 Come see our beautiful facility and meet our caring staff
               </p>
             </div>
@@ -333,15 +333,15 @@ export default function Home() {
               </div>
               <div className="mt-8 text-center space-y-4">
                 <div>
-                  <p className="text-xl font-bold text-foreground mb-2">
+                  <p className="text-xl font-bold text-white mb-2">
                     Great Beginnings Day Care Center
                   </p>
-                  <p className="text-muted-foreground">757 E Nerge Rd, Roselle, IL 60172</p>
+                  <p className="text-white/90">757 E Nerge Rd, Roselle, IL 60172</p>
                 </div>
                 <div className="flex justify-center gap-6 flex-wrap">
                   <a
                     href="tel:+16305551234"
-                    className="inline-flex items-center gap-2 text-daycare-blue hover:text-daycare-blue/80 transition-colors font-medium"
+                    className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors font-medium"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -350,7 +350,7 @@ export default function Home() {
                   </a>
                   <a
                     href="mailto:gbdcroselle@gmail.com"
-                    className="inline-flex items-center gap-2 text-daycare-green hover:text-daycare-green/80 transition-colors font-medium"
+                    className="inline-flex items-center gap-2 text-white hover:text-white/80 transition-colors font-medium"
                   >
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

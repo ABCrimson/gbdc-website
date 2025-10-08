@@ -83,8 +83,8 @@ export function TourForm() {
   return (
     <form action={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <label htmlFor="parentName" className="block text-sm font-semibold text-foreground">
-          Parent/Guardian Name <span className="text-red-500">*</span>
+        <label htmlFor="parentName" className="block text-sm font-semibold text-white dark:text-white">
+          Parent/Guardian Name <span className="text-red-400">*</span>
         </label>
         <input
           id="parentName"
@@ -98,8 +98,8 @@ export function TourForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="email" className="block text-sm font-semibold text-foreground">
-          Email <span className="text-red-500">*</span>
+        <label htmlFor="email" className="block text-sm font-semibold text-white dark:text-white">
+          Email <span className="text-red-400">*</span>
         </label>
         <input
           id="email"
@@ -113,8 +113,8 @@ export function TourForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="phone" className="block text-sm font-semibold text-foreground">
-          Phone Number <span className="text-red-500">*</span>
+        <label htmlFor="phone" className="block text-sm font-semibold text-white dark:text-white">
+          Phone Number <span className="text-red-400">*</span>
         </label>
         <input
           id="phone"
@@ -128,8 +128,8 @@ export function TourForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="childAge" className="block text-sm font-semibold text-foreground">
-          Child's Age Range <span className="text-red-500">*</span>
+        <label htmlFor="childAge" className="block text-sm font-semibold text-white dark:text-white">
+          Child's Age Range <span className="text-red-400">*</span>
         </label>
         <select
           id="childAge"
@@ -148,8 +148,8 @@ export function TourForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="preferredDate" className="block text-sm font-semibold text-foreground">
-          Preferred Tour Date <span className="text-red-500">*</span>
+        <label htmlFor="preferredDate" className="block text-sm font-semibold text-white dark:text-white">
+          Preferred Tour Date <span className="text-red-400">*</span>
         </label>
         <input
           id="preferredDate"
@@ -163,8 +163,8 @@ export function TourForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="notes" className="block text-sm font-semibold text-foreground">
-          Additional Notes <span className="text-muted-foreground text-xs">(optional)</span>
+        <label htmlFor="notes" className="block text-sm font-semibold text-white dark:text-white">
+          Additional Notes <span className="text-white/70 text-xs">(optional)</span>
         </label>
         <textarea
           id="notes"

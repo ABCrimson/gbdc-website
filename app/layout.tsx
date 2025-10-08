@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL. Nurturing environment with experienced staff, educational programs, and flexible schedules.',
   keywords: ['daycare', 'childcare', 'preschool', 'Roselle IL', 'infant care', 'toddler program', 'before and after school care'],
   authors: [{ name: 'Great Beginnings Day Care' }],
+  icons: {
+    icon: '/DaycareIcon.webp',
+    shortcut: '/DaycareIcon.webp',
+    apple: '/DaycareIcon.webp',
+  },
   openGraph: {
     title: 'Great Beginnings Day Care',
     description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL',

@@ -56,8 +56,8 @@ export function ContactForm() {
   return (
     <form action={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <label htmlFor="name" className="block text-sm font-semibold text-foreground">
-          Your Name <span className="text-red-500">*</span>
+        <label htmlFor="name" className="block text-sm font-semibold text-white dark:text-white">
+          Your Name <span className="text-red-400">*</span>
         </label>
         <input
           id="name"
@@ -71,8 +71,8 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="email" className="block text-sm font-semibold text-foreground">
-          Email <span className="text-red-500">*</span>
+        <label htmlFor="email" className="block text-sm font-semibold text-white dark:text-white">
+          Email <span className="text-red-400">*</span>
         </label>
         <input
           id="email"
@@ -86,8 +86,8 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="phone" className="block text-sm font-semibold text-foreground">
-          Phone <span className="text-muted-foreground text-xs">(optional)</span>
+        <label htmlFor="phone" className="block text-sm font-semibold text-white dark:text-white">
+          Phone <span className="text-white/70 text-xs">(optional)</span>
         </label>
         <input
           id="phone"
@@ -100,8 +100,8 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="message" className="block text-sm font-semibold text-foreground">
-          How can we help? <span className="text-red-500">*</span>
+        <label htmlFor="message" className="block text-sm font-semibold text-white dark:text-white">
+          How can we help? <span className="text-red-400">*</span>
         </label>
         <textarea
           id="message"

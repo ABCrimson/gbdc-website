@@ -13,21 +13,21 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="flex-1">
-        {/* Hero Section - 2025 Glassmorphism Design */}
-        <section className="relative py-24 px-4 overflow-hidden">
+        {/* Hero Section - Blue-to-Teal Gradient */}
+        <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Animated gradient orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 right-1/3 w-96 h-96 bg-daycare-green/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.3s' }} />
-            <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-daycare-blue/20 rounded-full blur-3xl animate-pulse-slow" />
+            <div className="absolute top-0 right-1/3 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.3s' }} />
+            <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse-slow" />
           </div>
 
-          {/* Glassmorphism container */}
+          {/* Content container */}
           <div className="container mx-auto text-center relative">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-daycare-green via-daycare-blue to-daycare-green bg-clip-text text-transparent animate-gradient">
+            <div className="p-12">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
                 Contact Us
               </h1>
-              <p className="text-xl text-gray-800 dark:text-gray-200 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
                 We'd love to hear from you! Reach out with questions or schedule a visit.
               </p>
             </div>
