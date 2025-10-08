@@ -210,3 +210,24 @@
 ::selection {
   @apply bg-daycare-blue/20 text-foreground;
 }
+
+/* Force SVG icon sizing - ensure icons don't scale beyond their container */
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  flex-shrink: 0;
+}
+
+/* Override all icon sizes to be smaller globally */
+.w-4.h-4,
+.w-5.h-5,
+.w-6.h-6 {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.w-3.h-3,
+.w-2\.5.h-2\.5 {
+  width: 10px !important;
+  height: 10px !important;
+}
