@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Loader } from '@googlemaps/js-api-loader'
+import { importLibrary } from '@googlemaps/js-api-loader'
 
 // Great Beginnings Day Care Center - 757 E Nerge Rd, Roselle, IL 60172
 const GBDC_LOCATION = { lat: 41.9847, lng: -88.0797 }
@@ -14,16 +14,9 @@ export function GoogleMap() {
   useEffect(() => {
     async function initMap() {
       try {
-        // Using @googlemaps/js-api-loader 2.0.1 with new importLibrary method
-        const loader = new Loader({
-          apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-          version: 'quarterly', // NEW: quarterly updates
-          libraries: ['marker'] // NEW: Advanced Markers
-        })
-
-        // NEW: Better promise handling with importLibrary
-        const { Map } = await (loader as any).importLibrary('maps')
-        const { AdvancedMarkerElement } = await (loader as any).importLibrary('marker')
+        // Using @googlemaps/js-api-loader 2.0.1 with functional API
+        const { Map } = await importLibrary('maps') as any
+        const { AdvancedMarkerElement } = await importLibrary('marker') as any
 
         if (!mapRef.current) return
 
