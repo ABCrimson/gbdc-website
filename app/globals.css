@@ -4,48 +4,209 @@
 
 @layer base {
   :root {
+    /* OKLCH Color System - Modern, perceptually uniform colors */
     --daycare-blue: oklch(65% 0.2 230);
     --daycare-yellow: oklch(85% 0.15 85);
     --daycare-green: oklch(70% 0.18 145);
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+
+    /* Semantic colors with OKLCH */
+    --background: oklch(100% 0 0);
+    --foreground: oklch(20% 0 0);
+    --card: oklch(100% 0 0);
+    --card-foreground: oklch(20% 0 0);
+    --muted: oklch(96% 0 0);
+    --muted-foreground: oklch(45% 0 0);
+    --border: oklch(90% 0 0);
+    --input: oklch(90% 0 0);
+    --ring: oklch(65% 0.2 230);
   }
 
   .dark {
     --daycare-blue: oklch(70% 0.2 230);
     --daycare-yellow: oklch(80% 0.15 85);
     --daycare-green: oklch(75% 0.18 145);
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
+
+    --background: oklch(15% 0 0);
+    --foreground: oklch(98% 0 0);
+    --card: oklch(18% 0 0);
+    --card-foreground: oklch(98% 0 0);
+    --muted: oklch(25% 0 0);
+    --muted-foreground: oklch(65% 0 0);
+    --border: oklch(28% 0 0);
+    --input: oklch(28% 0 0);
+    --ring: oklch(70% 0.2 230);
+  }
+
+  * {
+    @apply border-border;
   }
 
   body {
-    @apply antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
+    @apply antialiased bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
+  /* Modern Card Component with Container Queries */
   .card {
-    @apply bg-white rounded-xl shadow-sm p-6;
+    @apply bg-card text-card-foreground rounded-xl shadow-sm p-6 transition-all duration-300;
+    container-type: inline-size;
 
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px oklch(0% 0 0 / 0.1);
+      @apply shadow-lg -translate-y-1;
+      box-shadow: 0 20px 25px -5px oklch(0% 0 0 / 0.1),
+                  0 10px 10px -5px oklch(0% 0 0 / 0.04);
+    }
+
+    .card-title {
+      @apply text-2xl font-bold mb-2;
+    }
+
+    .card-description {
+      @apply text-muted-foreground;
     }
   }
 
-  .btn-primary {
-    @apply bg-daycare-blue text-white px-6 py-3 rounded-lg font-semibold;
-    @apply hover:opacity-90 transition-opacity disabled:opacity-50;
+  /* Container Query Responsive Design */
+  @container (min-width: 400px) {
+    .card-responsive {
+      @apply grid-cols-2 gap-4;
+    }
   }
 
+  /* Modern Button Styles */
+  .btn-primary {
+    @apply bg-daycare-blue text-white px-6 py-3 rounded-lg font-semibold;
+    @apply hover:opacity-90 active:scale-95 transition-all duration-200;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-daycare-green text-white px-6 py-3 rounded-lg font-semibold;
+    @apply hover:opacity-90 active:scale-95 transition-all duration-200;
+  }
+
+  /* Modern Form Inputs with Focus States */
   .input {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg;
-    @apply focus:outline-none focus:ring-2 focus:ring-daycare-blue;
+    @apply w-full px-4 py-2.5 bg-background border border-input rounded-lg;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
+    @apply transition-all duration-200;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .textarea {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg;
-    @apply focus:outline-none focus:ring-2 focus:ring-daycare-blue resize-none;
+    @apply w-full px-4 py-2.5 bg-background border border-input rounded-lg;
+    @apply text-foreground placeholder:text-muted-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
+    @apply resize-none transition-all duration-200;
   }
+
+  /* Modern Select Dropdown */
+  .select {
+    @apply w-full px-4 py-2.5 bg-background border border-input rounded-lg;
+    @apply text-foreground cursor-pointer;
+    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  /* Skeleton Loading States */
+  .skeleton {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  /* Smooth Page Transitions */
+  .page-transition {
+    @apply opacity-0 translate-y-4;
+    animation: pageEnter 0.5s ease-out forwards;
+  }
+
+  @keyframes pageEnter {
+    to {
+      @apply opacity-100 translate-y-0;
+    }
+  }
+
+  /* Glass Morphism Effect */
+  .glass {
+    @apply backdrop-blur-xl bg-white/80 dark:bg-gray-950/80;
+    @apply border border-white/20 dark:border-gray-800/20;
+  }
+
+  /* Modern Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      var(--daycare-blue),
+      var(--daycare-green)
+    );
+  }
+
+  /* Floating Animation */
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Shimmer Effect for Loading */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      oklch(96% 0 0) 25%,
+      oklch(98% 0 0) 50%,
+      oklch(96% 0 0) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+/* Smooth Scroll Behavior */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Focus Visible for Accessibility */
+:focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom Selection Color */
+::selection {
+  @apply bg-daycare-blue/20 text-foreground;
 }
