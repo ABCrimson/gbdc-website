@@ -1,0 +1,33 @@
+{
+  "common": {
+    "home": "Home",
+    "programs": "Programs",
+    "gallery": "Gallery",
+    "calendar": "Calendar",
+    "contact": "Contact",
+    "scheduleTour": "Schedule Tour",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started"
+  },
+  "home": {
+    "hero": {
+      "title": "Great Beginnings Day Care",
+      "subtitle": "Quality childcare for ages 6 weeks to 12 years",
+      "description": "Nurturing environment with experienced staff, educational programs, and flexible schedules in Roselle, IL"
+    }
+  },
+  "footer": {
+    "contactUs": "Contact Us",
+    "hours": "Hours of Operation",
+    "quickLinks": "Quick Links",
+    "mondayFriday": "Monday - Friday",
+    "weekends": "Weekends",
+    "closed": "Closed",
+    "ourPrograms": "Our Programs",
+    "photoGallery": "Photo Gallery",
+    "calendarEvents": "Calendar & Events",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "allRightsReserved": "All rights reserved"
+  }
+}

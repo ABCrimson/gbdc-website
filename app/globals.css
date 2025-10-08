@@ -7,10 +7,20 @@
     --daycare-blue: oklch(65% 0.2 230);
     --daycare-yellow: oklch(85% 0.15 85);
     --daycare-green: oklch(70% 0.18 145);
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+  }
+
+  .dark {
+    --daycare-blue: oklch(70% 0.2 230);
+    --daycare-yellow: oklch(80% 0.15 85);
+    --daycare-green: oklch(75% 0.18 145);
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
   }
 }
 

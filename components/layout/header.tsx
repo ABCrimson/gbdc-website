@@ -3,6 +3,8 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
+import { LanguageSwitcher } from '@/components/ui/language-switcher'
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -16,7 +18,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/95 dark:bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-950/60">
       <nav className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -24,24 +26,28 @@ export function Header() {
             <span className="text-xl font-bold text-daycare-blue">
               Great Beginnings
             </span>
-            <span className="text-sm text-gray-600">Day Care</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400">Day Care</span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex md:items-center md:space-x-6">
+        <div className="hidden md:flex md:items-center md:space-x-4">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-gray-700 transition-colors hover:text-daycare-blue"
+              className="text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors hover:text-daycare-blue"
             >
               {item.name}
             </Link>
           ))}
-          <Button asChild className="bg-daycare-blue hover:bg-daycare-blue/90">
-            <Link href="/tour">Schedule Tour</Link>
-          </Button>
+          <div className="flex items-center space-x-2 ml-2">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            <Button asChild className="bg-daycare-blue hover:bg-daycare-blue/90">
+              <Link href="/tour">Schedule Tour</Link>
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -77,18 +83,26 @@ export function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t bg-white">
+        <div className="md:hidden border-t bg-white dark:bg-gray-950">
           <div className="container px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-base font-medium text-gray-700 hover:text-daycare-blue"
+                className="block py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-daycare-blue"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
+            <div className="flex items-center justify-between py-2">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Language</span>
+              <LanguageSwitcher />
+            </div>
+            <div className="flex items-center justify-between py-2">
+              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Theme</span>
+              <ThemeToggle />
+            </div>
             <Button asChild className="w-full bg-daycare-blue hover:bg-daycare-blue/90">
               <Link href="/tour">Schedule Tour</Link>
             </Button>

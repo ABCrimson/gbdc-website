@@ -1,0 +1,33 @@
+{
+  "common": {
+    "home": "Inicio",
+    "programs": "Programas",
+    "gallery": "Galería",
+    "calendar": "Calendario",
+    "contact": "Contacto",
+    "scheduleTour": "Programar Visita",
+    "learnMore": "Más Información",
+    "getStarted": "Comenzar"
+  },
+  "home": {
+    "hero": {
+      "title": "Guardería Great Beginnings",
+      "subtitle": "Cuidado infantil de calidad para niños de 6 semanas a 12 años",
+      "description": "Ambiente acogedor con personal experimentado, programas educativos y horarios flexibles en Roselle, IL"
+    }
+  },
+  "footer": {
+    "contactUs": "Contáctenos",
+    "hours": "Horario de Operación",
+    "quickLinks": "Enlaces Rápidos",
+    "mondayFriday": "Lunes - Viernes",
+    "weekends": "Fines de Semana",
+    "closed": "Cerrado",
+    "ourPrograms": "Nuestros Programas",
+    "photoGallery": "Galería de Fotos",
+    "calendarEvents": "Calendario y Eventos",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "allRightsReserved": "Todos los derechos reservados"
+  }
+}
