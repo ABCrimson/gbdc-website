@@ -1,7 +1,13 @@
+'use client'
+
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 export function Hero() {
+  const tHero = useTranslations('home.hero')
+  const tCommon = useTranslations('common')
+
   return (
     <section className="relative py-20 md:py-24 px-4 overflow-hidden bg-gradient-to-br from-daycare-blue/5 via-background to-daycare-green/5">
       {/* Animated Background Elements */}
@@ -25,19 +31,18 @@ export function Hero() {
         {/* Main Heading with Gradient Text */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 animate-slide-up pb-2">
           <span className="block bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient leading-tight pb-1">
-            Great Beginnings
+            {tHero('title')}
           </span>
-          <span className="block text-foreground mt-4">Day Care Center</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl lg:text-3xl mb-4 text-muted-foreground font-medium animate-slide-up" style={{ animationDelay: '100ms' }}>
-          Quality childcare for ages <span className="text-daycare-blue font-bold">6 weeks to 12 years</span>
+          {tHero('subtitle')}
         </p>
 
         {/* Description */}
         <p className="text-base md:text-lg lg:text-xl mb-10 text-muted-foreground max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '200ms' }}>
-          Nurturing environment with experienced staff, educational programs, and flexible schedules in <span className="font-semibold text-foreground">Roselle, IL</span>
+          {tHero('description')}
         </p>
 
         {/* CTA Buttons */}
@@ -61,7 +66,7 @@ export function Hero() {
                   d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                 />
               </svg>
-              Schedule a Tour
+              {tCommon('scheduleTour')}
             </Link>
           </Button>
 
@@ -85,7 +90,7 @@ export function Hero() {
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                 />
               </svg>
-              Contact Us
+              {tCommon('contactUs')}
             </Link>
           </Button>
         </div>

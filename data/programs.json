@@ -40,7 +40,7 @@
     }
   },
   {
-    "id": "two-year-olds",
+    "id": "twoYearOlds",
     "name": "Two Year Olds",
     "ageRange": "2 years",
     "description": "Building foundational skills through hands-on exploration, creative expression, and developing social-emotional awareness.",
@@ -60,7 +60,7 @@
     }
   },
   {
-    "id": "three-year-olds",
+    "id": "threeYearOlds",
     "name": "Three Year Olds",
     "ageRange": "3 years",
     "description": "Fostering curiosity and learning through age-appropriate curriculum, problem-solving activities, and cooperative play.",
@@ -80,7 +80,7 @@
     }
   },
   {
-    "id": "four-five-year-olds",
+    "id": "fourFiveYearOlds",
     "name": "Four/Five Year Olds",
     "ageRange": "4 - 5 years",
     "description": "Comprehensive kindergarten preparation with early literacy, math concepts, and developing critical thinking and problem-solving skills.",
@@ -100,7 +100,7 @@
     }
   },
   {
-    "id": "before-after-school",
+    "id": "beforeAfterSchool",
     "name": "Before Or After School",
     "ageRange": "5 - 12 years",
     "description": "Before and after school care with homework support, enrichment activities, and summer camp programs for school-age children.",

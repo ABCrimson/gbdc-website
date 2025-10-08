@@ -1,27 +1,16 @@
+'use client'
+
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { Hero } from '@/components/features/hero'
 import { GoogleMap } from '@/components/features/google-map'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 import programs from '@/data/programs.json'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Great Beginnings Day Care Center | Quality Childcare in Roselle, IL',
-  description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL. Experienced staff, educational programs, and flexible schedules. Schedule a tour today!',
-  keywords: ['daycare', 'childcare', 'preschool', 'Roselle IL', 'infant care', 'toddler care', 'school age care'],
-  openGraph: {
-    title: 'Great Beginnings Day Care Center',
-    description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL',
-    url: 'https://greatbeginningsdaycare.com',
-    siteName: 'Great Beginnings Day Care Center',
-    locale: 'en_US',
-    type: 'website',
-  },
-}
+import { useTranslations } from 'next-intl'
 
 export default function Home() {
+  const t = useTranslations()
   const featuredPrograms = programs.slice(0, 3)
 
   return (
@@ -32,7 +21,7 @@ export default function Home() {
 
         {/* About Section - Warm Blue-to-Teal Gradient */}
         <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
-          {/* Decorative background elements - 20% stronger */}
+          {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-daycare-yellow/12 rounded-full blur-3xl" />
             <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-daycare-blue/12 rounded-full blur-3xl" />
@@ -46,7 +35,7 @@ export default function Home() {
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">
-                Welcome to Great Beginnings
+                {t('home.about.title')}
               </h2>
               <div className="w-20 h-1 bg-white/60 mx-auto mb-8" />
             </div>
@@ -54,19 +43,17 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-white/90 leading-relaxed">
-                  For over <span className="font-bold text-white">20 years</span>, we've been providing quality childcare in Roselle, Illinois.
-                  Our experienced staff creates a nurturing environment where children can learn, grow, and thrive.
+                  {t('home.about.paragraph1')}
                 </p>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  We offer flexible schedules, educational programs, and a safe, engaging environment
-                  for children from 6 weeks to 12 years old.
+                  {t('home.about.paragraph2')}
                 </p>
                 <div className="flex gap-4 pt-4">
                   <Button asChild className="bg-daycare-blue hover:bg-daycare-blue/90">
-                    <Link href="/programs">View Programs</Link>
+                    <Link href="/programs">{t('common.viewPrograms')}</Link>
                   </Button>
                   <Button asChild className="bg-white text-daycare-green hover:bg-white/90 shadow-md">
-                    <Link href="/tour">Schedule Tour</Link>
+                    <Link href="/tour">{t('common.scheduleTour')}</Link>
                   </Button>
                 </div>
               </div>
@@ -77,29 +64,29 @@ export default function Home() {
                     icon: <svg className="w-8 h-8 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                     </svg>,
-                    title: 'Licensed & Certified',
-                    desc: 'State approved facility'
+                    title: t('home.about.features.licensed.title'),
+                    desc: t('home.about.features.licensed.description')
                   },
                   {
                     icon: <svg className="w-8 h-8 text-daycare-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>,
-                    title: 'Experienced Staff',
-                    desc: '20+ years combined'
+                    title: t('home.about.features.staff.title'),
+                    desc: t('home.about.features.staff.description')
                   },
                   {
                     icon: <svg className="w-8 h-8 text-daycare-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>,
-                    title: 'Nutritious Meals',
-                    desc: 'Fresh daily menu'
+                    title: t('home.about.features.meals.title'),
+                    desc: t('home.about.features.meals.description')
                   },
                   {
                     icon: <svg className="w-8 h-8 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                     </svg>,
-                    title: 'Educational Programs',
-                    desc: 'Age-appropriate curriculum'
+                    title: t('home.about.features.programs.title'),
+                    desc: t('home.about.features.programs.description')
                   },
                 ].map((item, i) => (
                   <div key={i} className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border-2 border-white/60 dark:border-gray-700/60 p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.5)] transition-all duration-300 hover:-translate-y-2 hover:border-white/80 dark:hover:border-gray-600/80 hover:bg-white/80 dark:hover:bg-gray-900/80">
@@ -126,9 +113,9 @@ export default function Home() {
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">Our Programs</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">{t('home.featuredPrograms.title')}</h2>
               <p className="text-lg text-white/90 max-w-2xl mx-auto">
-                Age-appropriate care and education tailored to your child's developmental stage
+                {t('home.featuredPrograms.subtitle')}
               </p>
             </div>
 
@@ -150,14 +137,14 @@ export default function Home() {
                         </svg>
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-daycare-blue dark:group-hover:text-daycare-blue transition-colors">
-                        {program.name}
+                        {t(`programs.list.${program.id}.name`)}
                       </h3>
                       <p className="text-sm font-semibold text-daycare-green mb-3">
-                        {program.ageRange}
+                        {t(`programs.list.${program.id}.ageRange`)}
                       </p>
                     </div>
                     <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {program.description}
+                      {t(`programs.list.${program.id}.description`)}
                     </p>
                   </div>
                 </div>
@@ -167,7 +154,7 @@ export default function Home() {
             <div className="text-center">
               <Button asChild size="lg" className="group bg-white text-daycare-blue hover:bg-white/90">
                 <Link href="/programs" className="flex items-center gap-2">
-                  View All Programs
+                  {t('home.featuredPrograms.viewAll')}
                   <svg className="w-3 h-3 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -188,10 +175,10 @@ export default function Home() {
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">
-                Our Daily Activities & Curriculum
+                {t('home.activities.title')}
               </h2>
               <p className="text-lg text-white/90 max-w-2xl mx-auto">
-                A comprehensive approach to early childhood education with enriching activities and nutrition
+                {t('home.activities.subtitle')}
               </p>
             </div>
 
@@ -206,33 +193,17 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                    Nutritious Meals & Snacks
+                    {t('home.activities.nutrition.title')}
                   </h3>
                   <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Wholesome breakfast, lunch, and afternoon snacks provided daily</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Fresh fruit served three times daily for optimal nutrition</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Special catering program featuring high-quality, child-friendly meals</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Nutritious baby food provided for our youngest learners</span>
-                    </li>
+                    {(t.raw('home.activities.nutrition.features') as string[]).map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-daycare-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -247,33 +218,17 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                    Enriching Curriculum
+                    {t('home.activities.curriculum.title')}
                   </h3>
                   <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Age-specific curriculum tailored to each classroom's developmental needs</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Weekly music enrichment sessions with a professional music educator</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Special entertainment programs each week featuring engaging activities children love</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-daycare-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-gray-700 dark:text-gray-300">Caring, experienced teachers dedicated to nurturing each child's growth</span>
-                    </li>
+                    {(t.raw('home.activities.curriculum.features') as string[]).map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <svg className="w-5 h-5 text-daycare-blue mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-gray-700 dark:text-gray-300">{feature}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -282,7 +237,7 @@ export default function Home() {
             {/* Additional highlight */}
             <div className="text-center bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-white/20 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                Our comprehensive daily program ensures your child receives not only exceptional care but also the educational foundation and enrichment activities that foster creativity, curiosity, and confidence. Every aspect of our curriculum is designed with your child's development and happiness in mind.
+                {t('home.activities.description')}
               </p>
             </div>
           </div>
@@ -305,17 +260,17 @@ export default function Home() {
           <div className="container mx-auto px-4 py-32 relative z-10">
             <div className="max-w-4xl mx-auto text-center text-white">
               <h2 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-                Where Learning Meets Nature
+                {t('home.nature.title')}
               </h2>
               <p className="text-xl md:text-2xl mb-8 drop-shadow-md leading-relaxed">
-                At Great Beginnings, we believe in connecting children with the beauty of the natural world while providing exceptional care and education.
+                {t('home.nature.description')}
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
                 <Button asChild size="lg" className="bg-white text-daycare-blue hover:bg-white/90">
-                  <Link href="/tour">Schedule Your Visit</Link>
+                  <Link href="/tour">{t('home.nature.scheduleVisit')}</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-daycare-blue">
-                  <Link href="/programs">Explore Programs</Link>
+                  <Link href="/programs">{t('home.nature.explorePrograms')}</Link>
                 </Button>
               </div>
             </div>
@@ -334,9 +289,9 @@ export default function Home() {
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">Visit Us</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white pb-2 leading-tight">{t('home.location.title')}</h2>
               <p className="text-lg text-white/90">
-                Come see our beautiful facility and meet our caring staff
+                {t('home.location.description')}
               </p>
             </div>
 
@@ -368,7 +323,7 @@ export default function Home() {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    Email Us
+                    {t('common.emailUs')}
                   </a>
                 </div>
               </div>

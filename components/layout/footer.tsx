@@ -1,6 +1,10 @@
-import Link from 'next/link'
+'use client'
+
+import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 export function Footer() {
+  const t = useTranslations('footer')
   const currentYear = new Date().getFullYear()
 
   return (
@@ -21,7 +25,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Providing quality childcare and education for over 20 years in Roselle, Illinois.
+              {t('tagline')}
             </p>
           </div>
 
@@ -31,7 +35,7 @@ export function Footer() {
               <svg className="w-4 h-4 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Contact Us
+              {t('contactUs')}
             </h3>
             <div className="space-y-3 text-sm text-muted-foreground">
               <p>757 E Nerge Rd<br />Roselle, IL 60172</p>
@@ -60,16 +64,16 @@ export function Footer() {
               <svg className="w-4 h-4 text-daycare-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Hours
+              {t('hours')}
             </h3>
             <div className="space-y-3 text-sm">
               <div>
-                <p className="font-medium text-foreground">Monday - Friday</p>
-                <p className="text-muted-foreground">6:00 AM - 6:00 PM</p>
+                <p className="font-medium text-foreground">{t('mondayFriday')}</p>
+                <p className="text-muted-foreground">{t('time')}</p>
               </div>
               <div>
-                <p className="font-medium text-foreground">Weekends</p>
-                <p className="text-muted-foreground">Closed</p>
+                <p className="font-medium text-foreground">{t('weekends')}</p>
+                <p className="text-muted-foreground">{t('closed')}</p>
               </div>
             </div>
           </div>
@@ -80,14 +84,14 @@ export function Footer() {
               <svg className="w-4 h-4 text-daycare-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              Quick Links
+              {t('quickLinks')}
             </h3>
             <nav className="space-y-2.5 text-sm">
               {[
-                { name: 'Our Programs', href: '/programs' },
-                { name: 'Photo Gallery', href: '/gallery' },
-                { name: 'Calendar & Events', href: '/calendar' },
-                { name: 'Schedule a Tour', href: '/tour' },
+                { name: t('links.programs'), href: '/programs' },
+                { name: t('links.gallery'), href: '/gallery' },
+                { name: t('links.calendar'), href: '/calendar' },
+                { name: t('links.tour'), href: '/tour' },
               ].map((link) => (
                 <Link
                   key={link.name}
@@ -109,13 +113,13 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© {currentYear} Great Beginnings Day Care Center. All rights reserved.</p>
+            <p>© {currentYear} Great Beginnings Day Care Center. {t('allRightsReserved')}.</p>
             <div className="flex items-center gap-6">
               <Link href="/privacy" className="hover:text-daycare-blue transition-colors">
-                Privacy Policy
+                {t('privacyPolicy')}
               </Link>
               <Link href="/terms" className="hover:text-daycare-blue transition-colors">
-                Terms of Service
+                {t('termsOfService')}
               </Link>
             </div>
           </div>

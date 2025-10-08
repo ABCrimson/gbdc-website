@@ -1,13 +1,14 @@
+'use client'
+
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { Calendar } from '@/components/features/calendar'
-
-export const metadata = {
-  title: 'Calendar & Events | Great Beginnings Day Care Center',
-  description: 'View our upcoming events and closure dates.',
-}
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export default function CalendarPage() {
+  const t = useTranslations('calendar')
+
   return (
     <>
       <Header />
@@ -24,10 +25,10 @@ export default function CalendarPage() {
           <div className="container mx-auto text-center relative">
             <div className="p-12">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                Calendar & Events
+                {t('title')}
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Stay informed about upcoming events, holidays, and closure dates
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -52,11 +53,11 @@ export default function CalendarPage() {
                   </svg>
                 </div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
-                  Upcoming Events & Closures
+                  {t('upcomingEvents.title')}
                 </h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                We observe major holidays and close for staff training days. Please plan accordingly.
+                {t('upcomingEvents.description')}
               </p>
               <Calendar />
             </div>
@@ -71,7 +72,7 @@ export default function CalendarPage() {
                   </svg>
                 </div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-daycare-green to-daycare-blue bg-clip-text text-transparent">
-                  Regular Hours
+                  {t('regularHours.title')}
                 </h2>
               </div>
 
@@ -82,18 +83,18 @@ export default function CalendarPage() {
                     <svg className="w-5 h-5 text-daycare-blue" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-semibold text-gray-900 dark:text-white">Monday - Friday</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">{t('regularHours.mondayFriday')}</span>
                   </div>
-                  <span className="text-lg font-bold text-daycare-blue">6:00 AM - 6:00 PM</span>
+                  <span className="text-lg font-bold text-daycare-blue">{t('regularHours.time')}</span>
                 </div>
                 <div className="flex justify-between items-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
                   <div className="flex items-center gap-3">
                     <svg className="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-semibold text-gray-900 dark:text-white">Weekends</span>
+                    <span className="font-semibold text-gray-900 dark:text-white">{t('regularHours.weekends')}</span>
                   </div>
-                  <span className="text-lg font-bold text-gray-600 dark:text-gray-400">Closed</span>
+                  <span className="text-lg font-bold text-gray-600 dark:text-gray-400">{t('regularHours.closed')}</span>
                 </div>
               </div>
 
@@ -104,7 +105,7 @@ export default function CalendarPage() {
                     <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                   </svg>
                   <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Please ensure pickup before 6:00 PM. Late pickup fees apply after closing time.
+                    {t('regularHours.notice')}
                   </p>
                 </div>
               </div>
@@ -116,18 +117,17 @@ export default function CalendarPage() {
         <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto text-center max-w-3xl">
             <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              Questions About Our Schedule?
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Contact us if you have questions about specific dates or need to arrange
-              alternative care during closures.
+              {t('cta.description')}
             </p>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center px-8 py-3 bg-daycare-green text-white rounded-lg hover:bg-daycare-green/90 transition-colors text-lg font-medium"
             >
-              Contact Us
-            </a>
+              {t('cta.button')}
+            </Link>
           </div>
         </section>
       </main>

@@ -1,14 +1,15 @@
+'use client'
+
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { ContactForm } from '@/components/forms/contact-form'
 import { GoogleMap } from '@/components/features/google-map'
-
-export const metadata = {
-  title: 'Contact Us | Great Beginnings Day Care Center',
-  description: 'Get in touch with us for questions, enrollment information, or to schedule a tour.',
-}
+import { useTranslations } from 'next-intl'
 
 export default function ContactPage() {
+  const t = useTranslations('contact')
+  const tCommon = useTranslations('common')
+
   return (
     <>
       <Header />
@@ -25,10 +26,10 @@ export default function ContactPage() {
           <div className="container mx-auto text-center relative">
             <div className="p-12">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                Contact Us
+                {t('title')}
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                We'd love to hear from you! Reach out with questions or schedule a visit.
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -41,14 +42,14 @@ export default function ContactPage() {
               {/* Contact Information */}
               <div className="bg-white dark:bg-gray-900/75 border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-green to-daycare-blue bg-clip-text text-transparent">
-                  Get in Touch
+                  {t('getInTouch')}
                 </h2>
 
                 <div className="space-y-6">
                   {/* Address */}
                   <div>
                     <h3 className="text-lg font-semibold text-daycare-blue dark:text-daycare-blue mb-2">
-                      Address
+                      {t('address')}
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
                       Great Beginnings Day Care Center
@@ -62,7 +63,7 @@ export default function ContactPage() {
                   {/* Phone */}
                   <div>
                     <h3 className="text-lg font-semibold text-daycare-blue dark:text-daycare-blue mb-2">
-                      Phone
+                      {t('phone')}
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
                       <a
@@ -77,7 +78,7 @@ export default function ContactPage() {
                   {/* Email */}
                   <div>
                     <h3 className="text-lg font-semibold text-daycare-blue dark:text-daycare-blue mb-2">
-                      Email
+                      {t('email')}
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
                       <a
@@ -92,12 +93,10 @@ export default function ContactPage() {
                   {/* Hours */}
                   <div>
                     <h3 className="text-lg font-semibold text-daycare-blue dark:text-daycare-blue mb-2">
-                      Hours of Operation
+                      {t('hours')}
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Monday - Friday: 6:00 AM - 6:00 PM
-                      <br />
-                      Weekends: Closed
+                      {t('hoursDetails')}
                     </p>
                   </div>
                 </div>
@@ -106,7 +105,7 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div>
                 <h2 className="text-3xl font-bold mb-6 text-white drop-shadow-lg">
-                  Send Us a Message
+                  {t('sendMessage')}
                 </h2>
                 <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                   <ContactForm />
@@ -120,7 +119,7 @@ export default function ContactPage() {
         <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-white">
-              Find Us
+              {t('findUs')}
             </h2>
             <GoogleMap />
           </div>

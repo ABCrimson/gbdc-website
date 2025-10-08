@@ -1,12 +1,11 @@
+'use client'
+
 import { Suspense } from 'react'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { PhotoGallery } from '@/components/features/photo-gallery'
-
-export const metadata = {
-  title: 'Photo Gallery | Great Beginnings Day Care Center',
-  description: 'View photos of our facility, classrooms, and outdoor play areas.',
-}
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 function GallerySkeleton() {
   return (
@@ -22,6 +21,8 @@ function GallerySkeleton() {
 }
 
 export default function GalleryPage() {
+  const t = useTranslations('gallery')
+
   return (
     <>
       <Header />
@@ -38,10 +39,10 @@ export default function GalleryPage() {
           <div className="container mx-auto text-center relative">
             <div className="p-12">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                Photo Gallery
+                {t('title')}
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Take a virtual tour of our facility and see where your child will learn and play
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -60,18 +61,17 @@ export default function GalleryPage() {
         <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto text-center max-w-3xl">
             <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              See Our Facility in Person
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Photos can only show so much. Schedule a tour to experience our warm,
-              welcoming environment firsthand and meet our dedicated staff.
+              {t('cta.description')}
             </p>
-            <a
+            <Link
               href="/tour"
               className="inline-flex items-center px-8 py-3 bg-daycare-blue text-white rounded-lg hover:bg-daycare-blue/90 transition-colors text-lg font-medium"
             >
-              Schedule a Tour
-            </a>
+              {t('cta.button')}
+            </Link>
           </div>
         </section>
       </main>

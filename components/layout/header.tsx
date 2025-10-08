@@ -1,22 +1,24 @@
 'use client'
 
-import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { LanguageSwitcher } from '@/components/ui/language-switcher'
 
-const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Programs', href: '/programs' },
-  { name: 'Gallery', href: '/gallery' },
-  { name: 'Calendar', href: '/calendar' },
-  { name: 'Contact', href: '/contact' },
-]
-
 export function Header() {
+  const t = useTranslations('navigation')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+
+  const navItems = [
+    { name: t('home'), href: '/' },
+    { name: t('programs'), href: '/programs' },
+    { name: t('gallery'), href: '/gallery' },
+    { name: t('calendar'), href: '/calendar' },
+    { name: t('contact'), href: '/contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +76,7 @@ export function Header() {
               asChild
               className="bg-daycare-blue hover:bg-daycare-blue/90 shadow-md hover:shadow-glow transition-all duration-300"
             >
-              <Link href="/tour">Schedule Tour</Link>
+              <Link href="/tour">{t('scheduleTour')}</Link>
             </Button>
           </div>
         </div>
@@ -138,7 +140,7 @@ export function Header() {
               style={{ animationDelay: '300ms' }}
             >
               <Link href="/tour" onClick={() => setMobileMenuOpen(false)}>
-                Schedule Tour
+                {t('scheduleTour')}
               </Link>
             </Button>
           </div>

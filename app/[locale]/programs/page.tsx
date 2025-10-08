@@ -1,11 +1,10 @@
+'use client'
+
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import programs from '@/data/programs.json'
-
-export const metadata = {
-  title: 'Programs | Great Beginnings Day Care Center',
-  description: 'Explore our childcare programs for infants, toddlers, preschoolers, and school-age children.',
-}
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 interface Program {
   id: string
@@ -25,13 +24,15 @@ interface Program {
 const programColors: Record<string, string> = {
   'infants': '#EC4899',           // Pink
   'toddlers': '#8B5CF6',          // Purple
-  'two-year-olds': '#3B82F6',    // Blue
-  'three-year-olds': '#6366F1',  // Indigo
-  'four-five-year-olds': '#06B6D4', // Cyan
-  'before-after-school': '#F97316'  // Orange
+  'twoYearOlds': '#3B82F6',       // Blue
+  'threeYearOlds': '#6366F1',     // Indigo
+  'fourFiveYearOlds': '#06B6D4',  // Cyan
+  'beforeAfterSchool': '#F97316'  // Orange
 }
 
 export default function ProgramsPage() {
+  const t = useTranslations('programs')
+
   return (
     <>
       <Header />
@@ -48,10 +49,10 @@ export default function ProgramsPage() {
           <div className="container mx-auto text-center relative">
             <div className="p-12">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                Our Programs
+                {t('title')}
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Age-appropriate care and education for children from 6 weeks to 12 years
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -67,10 +68,10 @@ export default function ProgramsPage() {
 
           <div className="container mx-auto max-w-6xl relative z-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center text-white">
-              Program Details
+              {t('detailsTitle')}
             </h2>
             <p className="text-center text-white/90 mb-12 max-w-2xl mx-auto">
-              Comprehensive information about each of our carefully designed programs
+              {t('detailsSubtitle')}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -91,15 +92,15 @@ export default function ProgramsPage() {
                     {/* Header with age range badge */}
                     <div className="flex items-start justify-between mb-4">
                       <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
-                        {program.name}
+                        {t(`list.${program.id}.name`)}
                       </h3>
                       <span className="px-3 py-1 text-xs font-semibold bg-daycare-green/10 text-daycare-green rounded-full">
-                        {program.ageRange}
+                        {t(`list.${program.id}.ageRange`)}
                       </span>
                     </div>
 
                     <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                      {program.description}
+                      {t(`list.${program.id}.description`)}
                     </p>
 
                     {/* Pricing */}
@@ -110,15 +111,15 @@ export default function ProgramsPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           <h4 className="font-semibold text-gray-900 dark:text-white">
-                            Tuition
+                            {t('tuition')}
                           </h4>
                         </div>
                         <div className="ml-7 space-y-1">
                           <p className="text-sm text-gray-700 dark:text-gray-300">
-                            <span className="font-medium">Weekly Rate:</span> {program.pricing.weeklyRate}
+                            <span className="font-medium">{t('weeklyRate')}:</span> {program.pricing.weeklyRate}
                           </p>
                           <p className="text-sm text-gray-700 dark:text-gray-300">
-                            <span className="font-medium">Daily Rate:</span> {program.pricing.dailyRate}
+                            <span className="font-medium">{t('dailyRate')}:</span> {program.pricing.dailyRate}
                           </p>
                           {program.pricing.note && (
                             <p className="text-xs text-gray-600 dark:text-gray-400 italic mt-2">
@@ -137,7 +138,7 @@ export default function ProgramsPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                           <h4 className="font-semibold text-gray-900 dark:text-white">
-                            Schedule
+                            {t('schedule')}
                           </h4>
                         </div>
                         <p className="text-sm text-gray-700 dark:text-gray-300 ml-7">
@@ -153,11 +154,11 @@ export default function ProgramsPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                         </svg>
                         <h4 className="font-semibold text-gray-900 dark:text-white">
-                          Features
+                          {t('features')}
                         </h4>
                       </div>
                       <ul className="space-y-2 ml-7">
-                        {program.features.map((feature: string, idx: number) => (
+                        {(t.raw(`list.${program.id}.features`) as string[]).map((feature: string, idx: number) => (
                           <li key={idx} className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-300">
                             <svg className="w-4 h-4 text-daycare-green mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -175,21 +176,21 @@ export default function ProgramsPage() {
             {/* Call to Action */}
             <div className="mt-12 text-center">
               <p className="text-lg text-white/90 mb-6">
-                Have questions about our programs?
+                {t('cta.title')}
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
-                <a
+                <Link
                   href="/tour"
                   className="inline-flex items-center px-6 py-3 bg-white text-daycare-blue rounded-lg hover:bg-white/90 transition-colors shadow-lg font-medium"
                 >
-                  Schedule a Tour
-                </a>
-                <a
+                  {t('cta.scheduleTour')}
+                </Link>
+                <Link
                   href="/contact"
                   className="inline-flex items-center px-6 py-3 bg-white text-daycare-green rounded-lg hover:bg-white/90 transition-colors shadow-lg font-medium"
                 >
-                  Contact Us
-                </a>
+                  {t('cta.contactUs')}
+                </Link>
               </div>
             </div>
           </div>

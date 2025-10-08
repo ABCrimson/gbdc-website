@@ -1,13 +1,14 @@
+'use client'
+
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { TourForm } from '@/components/forms/tour-form'
-
-export const metadata = {
-  title: 'Schedule a Tour | Great Beginnings Day Care Center',
-  description: 'Book a tour of our facility and see why families trust us with their children.',
-}
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export default function TourPage() {
+  const t = useTranslations('tour')
+
   return (
     <>
       <Header />
@@ -26,10 +27,10 @@ export default function TourPage() {
           <div className="container mx-auto text-center relative">
             <div className="p-12">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-                Schedule a Tour
+                {t('title')}
               </h1>
               <p className="text-xl text-white/95 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-                Experience our facility firsthand and meet our caring, professional staff
+                {t('subtitle')}
               </p>
             </div>
           </div>
@@ -42,112 +43,55 @@ export default function TourPage() {
               {/* Tour Information */}
               <div className="bg-white dark:bg-gray-900/75 border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-yellow to-daycare-green bg-clip-text text-transparent">
-                  What to Expect
+                  {t('whatToExpect.title')}
                 </h2>
 
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-xl font-semibold text-daycare-blue dark:text-daycare-blue mb-3">
-                      Duration
+                      {t('whatToExpect.duration.title')}
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Tours typically last 30 minutes, giving you plenty of time to see our
-                      facility and ask questions.
+                      {t('whatToExpect.duration.description')}
                     </p>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-semibold text-daycare-blue dark:text-daycare-blue mb-3">
-                      What You'll See
+                      {t('whatToExpect.whatYouSee.title')}
                     </h3>
                     <ul className="space-y-2 text-gray-700 dark:text-gray-300">
-                      <li className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        All age-appropriate classrooms
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        Indoor and outdoor play areas
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        Learning and activity centers
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        Meal preparation and dining areas
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                        Safety and security features
-                      </li>
+                      {(t.raw('whatToExpect.whatYouSee.items') as string[]).map((item: string, idx: number) => (
+                        <li key={idx} className="flex items-start">
+                          <svg
+                            className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
 
                   <div>
                     <h3 className="text-xl font-semibold text-daycare-blue dark:text-daycare-blue mb-3">
-                      Meet Our Team
+                      {t('whatToExpect.meetTeam.title')}
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      You'll have the opportunity to meet our experienced teachers and staff,
-                      and learn about their qualifications and approach to childcare.
+                      {t('whatToExpect.meetTeam.description')}
                     </p>
                   </div>
 
                   <div className="bg-daycare-yellow/10 dark:bg-daycare-yellow/5 p-4 rounded-lg">
                     <p className="text-sm text-gray-700 dark:text-gray-300">
-                      <strong>Note:</strong> Tours are available Monday through Friday during
-                      regular business hours. We recommend scheduling at least 24 hours in advance.
+                      <strong>{t('whatToExpect.note').split(':')[0]}:</strong> {t('whatToExpect.note').split(':')[1]}
                     </p>
                   </div>
                 </div>
@@ -156,7 +100,7 @@ export default function TourPage() {
               {/* Tour Booking Form */}
               <div>
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-green to-daycare-blue bg-clip-text text-transparent">
-                  Book Your Tour
+                  {t('bookTour')}
                 </h2>
                 <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                   <TourForm />
@@ -170,25 +114,24 @@ export default function TourPage() {
         <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900">
           <div className="container mx-auto text-center max-w-3xl">
             <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              Have Questions Before Booking?
+              {t('cta.title')}
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-              Feel free to call us or send a message if you'd like to discuss your needs
-              before scheduling a tour.
+              {t('cta.description')}
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
                 href="tel:+16308943440"
                 className="inline-flex items-center px-8 py-3 bg-daycare-blue text-white rounded-lg hover:bg-daycare-blue/90 transition-colors text-lg font-medium"
               >
-                Call Us
+                {t('cta.callUs')}
               </a>
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center px-8 py-3 border-2 border-daycare-green text-daycare-green rounded-lg hover:bg-daycare-green hover:text-white transition-colors text-lg font-medium"
               >
-                Contact Us
-              </a>
+                {t('cta.contactUs')}
+              </Link>
             </div>
           </div>
         </section>
