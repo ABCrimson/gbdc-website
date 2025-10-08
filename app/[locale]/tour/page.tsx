@@ -11,22 +11,24 @@ export default function TourPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
-        {/* Hero Section - 2025 Glassmorphism Design */}
-        <section className="relative py-24 px-4 overflow-hidden">
-          {/* Animated gradient orbs */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 left-1/3 w-96 h-96 bg-daycare-yellow/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.2s' }} />
-            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-daycare-green/20 rounded-full blur-3xl animate-pulse-slow" />
-          </div>
+      <main id="main-content" className="flex-1">
+        {/* Hero Section - Forest Background */}
+        <section
+          className="relative py-24 px-4 overflow-hidden bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/Forest.webp)'
+          }}
+        >
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40" />
 
-          {/* Glassmorphism container */}
+          {/* Content container */}
           <div className="container mx-auto text-center relative">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/75 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-daycare-yellow via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient">
+            <div className="p-12">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                 Schedule a Tour
               </h1>
-              <p className="text-xl text-gray-800 dark:text-gray-200 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/95 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
                 Experience our facility firsthand and meet our caring, professional staff
               </p>
             </div>

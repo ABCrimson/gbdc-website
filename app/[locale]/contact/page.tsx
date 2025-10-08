@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero Section - Blue-to-Teal Gradient */}
         <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Animated gradient orbs */}
@@ -105,7 +105,7 @@ export default function ContactPage() {
 
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
+                <h2 className="text-3xl font-bold mb-6 text-white drop-shadow-lg">
                   Send Us a Message
                 </h2>
                 <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">

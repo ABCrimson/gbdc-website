@@ -157,7 +157,7 @@ export function TourForm() {
           type="date"
           required
           min={minDate}
-          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -171,7 +171,7 @@ export function TourForm() {
           name="notes"
           placeholder="Any specific questions or requirements..."
           rows={4}
-          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>

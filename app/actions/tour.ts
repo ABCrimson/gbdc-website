@@ -1,8 +1,22 @@
 'use server'
 
+import { headers } from 'next/headers'
 import { revalidatePath } from 'next/cache'
+import { parseISO, isValid, isFuture, addHours, isWeekend, format } from 'date-fns'
+import { formRateLimit, getClientId, getTimeRemaining } from '@/lib/rate-limit'
 
 export async function scheduleTour(formData: FormData) {
+  // Check rate limit
+  const headersList = await headers()
+  const clientId = getClientId(headersList)
+  const rateLimitResult = formRateLimit.check(clientId)
+
+  if (!rateLimitResult.success) {
+    return {
+      error: `Too many requests. Please try again in ${getTimeRemaining(rateLimitResult.reset)}.`
+    }
+  }
+
   // Validate required fields
   const parentName = formData.get('parentName')?.toString()
   const childAge = formData.get('childAge')?.toString()
@@ -12,6 +26,33 @@ export async function scheduleTour(formData: FormData) {
 
   if (!parentName || !childAge || !preferredDate || !phone || !email) {
     return { error: 'All fields are required' }
+  }
+
+  // Validate date format and value
+  const selectedDate = parseISO(preferredDate)
+
+  if (!isValid(selectedDate)) {
+    return { error: 'Invalid date format. Please select a valid date.' }
+  }
+
+  // Check if date is in the future
+  if (!isFuture(selectedDate)) {
+    return { error: 'Please select a future date for your tour.' }
+  }
+
+  // Check if date is at least 24 hours in advance
+  const minDate = addHours(new Date(), 24)
+  if (selectedDate < minDate) {
+    return {
+      error: 'Tours must be scheduled at least 24 hours in advance. Please select a later date.'
+    }
+  }
+
+  // Check if date is a weekend (tours only available Monday-Friday)
+  if (isWeekend(selectedDate)) {
+    return {
+      error: 'Tours are only available Monday through Friday during business hours. Please select a weekday.'
+    }
   }
 
   try {

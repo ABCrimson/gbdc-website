@@ -7,25 +7,276 @@
     "contact": "Contact",
     "scheduleTour": "Schedule Tour",
     "learnMore": "Learn More",
-    "getStarted": "Get Started"
+    "getStarted": "Get Started",
+    "viewPrograms": "View Programs",
+    "contactUs": "Contact Us",
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "findUs": "Find Us",
+    "language": "Language"
+  },
+  "navigation": {
+    "home": "Home",
+    "programs": "Programs",
+    "gallery": "Gallery",
+    "calendar": "Calendar",
+    "contact": "Contact",
+    "scheduleTour": "Schedule Tour"
   },
   "home": {
     "hero": {
       "title": "Great Beginnings Day Care",
       "subtitle": "Quality childcare for ages 6 weeks to 12 years",
       "description": "Nurturing environment with experienced staff, educational programs, and flexible schedules in Roselle, IL"
+    },
+    "about": {
+      "title": "Welcome to Great Beginnings",
+      "paragraph1": "For over 20 years, we've been providing quality childcare in Roselle, Illinois. Our experienced staff creates a nurturing environment where children can learn, grow, and thrive.",
+      "paragraph2": "We offer flexible schedules, educational programs, and a safe, engaging environment for children from 6 weeks to 12 years old.",
+      "features": {
+        "licensed": {
+          "title": "Licensed & Certified",
+          "description": "State approved facility"
+        },
+        "staff": {
+          "title": "Experienced Staff",
+          "description": "20+ years combined"
+        },
+        "meals": {
+          "title": "Nutritious Meals",
+          "description": "Fresh daily menu"
+        },
+        "programs": {
+          "title": "Educational Programs",
+          "description": "Age-appropriate curriculum"
+        }
+      }
+    },
+    "featuredPrograms": {
+      "title": "Our Programs",
+      "subtitle": "Age-appropriate care and education tailored to your child's developmental stage",
+      "viewAll": "View All Programs"
+    },
+    "activities": {
+      "title": "Our Daily Activities & Curriculum",
+      "subtitle": "A comprehensive approach to early childhood education with enriching activities and nutrition",
+      "nutrition": {
+        "title": "Nutritious Meals & Snacks",
+        "features": [
+          "Wholesome breakfast, lunch, and afternoon snacks provided daily",
+          "Fresh fruit served three times daily for optimal nutrition",
+          "Special catering program featuring high-quality, child-friendly meals",
+          "Nutritious baby food provided for our youngest learners"
+        ]
+      },
+      "curriculum": {
+        "title": "Enriching Curriculum",
+        "features": [
+          "Age-specific curriculum tailored to each classroom's developmental needs",
+          "Weekly music enrichment sessions with a professional music educator",
+          "Special entertainment programs each week featuring engaging activities children love",
+          "Caring, experienced teachers dedicated to nurturing each child's growth"
+        ]
+      },
+      "description": "Our comprehensive daily program ensures your child receives not only exceptional care but also the educational foundation and enrichment activities that foster creativity, curiosity, and confidence. Every aspect of our curriculum is designed with your child's development and happiness in mind."
+    },
+    "nature": {
+      "title": "Where Learning Meets Nature",
+      "description": "At Great Beginnings, we believe in connecting children with the beauty of the natural world while providing exceptional care and education.",
+      "scheduleVisit": "Schedule Your Visit",
+      "explorePrograms": "Explore Programs"
+    },
+    "location": {
+      "title": "Visit Us",
+      "description": "Come see our beautiful facility and meet our caring staff"
+    }
+  },
+  "programs": {
+    "title": "Our Programs",
+    "subtitle": "Age-appropriate care and education for children from 6 weeks to 12 years",
+    "detailsTitle": "Program Details",
+    "detailsSubtitle": "Comprehensive information about each of our carefully designed programs",
+    "tuition": "Tuition",
+    "weeklyRate": "Weekly Rate",
+    "dailyRate": "Daily Rate",
+    "schedule": "Schedule",
+    "features": "Features",
+    "cta": {
+      "title": "Have questions about our programs?",
+      "scheduleTour": "Schedule a Tour",
+      "contactUs": "Contact Us"
+    },
+    "list": {
+      "infants": {
+        "name": "Infants",
+        "ageRange": "6 weeks - 18 months",
+        "description": "Nurturing care for our youngest learners with focus on sensory exploration, motor development, and establishing routines in a safe, loving environment.",
+        "features": [
+          "Low teacher-to-child ratio",
+          "Safe, clean environment",
+          "Individualized care schedules",
+          "Daily reports for parents",
+          "Age-appropriate activities",
+          "Baby food provided"
+        ]
+      },
+      "toddlers": {
+        "name": "Toddlers",
+        "ageRange": "18 months - 2 years",
+        "description": "Encouraging independence and social skills through play-based learning, structured activities, and language development.",
+        "features": [
+          "Potty training support",
+          "Language development focus",
+          "Social interaction activities",
+          "Creative play and arts",
+          "Outdoor play time",
+          "Music and movement"
+        ]
+      },
+      "twoYearOlds": {
+        "name": "Two Year Olds",
+        "ageRange": "2 years",
+        "description": "Building foundational skills through hands-on exploration, creative expression, and developing social-emotional awareness.",
+        "features": [
+          "Structured daily curriculum",
+          "Social skills development",
+          "Early literacy introduction",
+          "Fine and gross motor activities",
+          "Creative arts and crafts",
+          "Group circle time"
+        ]
+      },
+      "threeYearOlds": {
+        "name": "Three Year Olds",
+        "ageRange": "3 years",
+        "description": "Fostering curiosity and learning through age-appropriate curriculum, problem-solving activities, and cooperative play.",
+        "features": [
+          "Pre-reading and early math",
+          "Science exploration",
+          "Creative thinking activities",
+          "Cooperative play and sharing",
+          "Music and rhythm activities",
+          "Outdoor learning experiences"
+        ]
+      },
+      "fourFiveYearOlds": {
+        "name": "Four/Five Year Olds",
+        "ageRange": "4 - 5 years",
+        "description": "Comprehensive kindergarten preparation with early literacy, math concepts, and developing critical thinking and problem-solving skills.",
+        "features": [
+          "Kindergarten readiness",
+          "STEAM activities",
+          "Circle time and group learning",
+          "Fine motor skill development",
+          "Character building",
+          "Early writing skills"
+        ]
+      },
+      "beforeAfterSchool": {
+        "name": "Before Or After School",
+        "ageRange": "5 - 12 years",
+        "description": "Before and after school care with homework support, enrichment activities, and summer camp programs for school-age children.",
+        "features": [
+          "Homework assistance",
+          "STEM projects",
+          "Sports and physical activities",
+          "Arts and crafts",
+          "Summer camp program",
+          "Healthy snacks provided"
+        ]
+      }
+    }
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Take a virtual tour of our facility and see where your child will learn and play",
+    "cta": {
+      "title": "See Our Facility in Person",
+      "description": "Photos can only show so much. Schedule a tour to experience our warm, welcoming environment firsthand and meet our dedicated staff.",
+      "button": "Schedule a Tour"
+    }
+  },
+  "calendar": {
+    "title": "Calendar & Events",
+    "subtitle": "Stay informed about upcoming events, holidays, and closure dates",
+    "upcomingEvents": {
+      "title": "Upcoming Events & Closures",
+      "description": "We observe major holidays and close for staff training days. Please plan accordingly."
+    },
+    "regularHours": {
+      "title": "Regular Hours",
+      "mondayFriday": "Monday - Friday",
+      "weekends": "Weekends",
+      "closed": "Closed",
+      "time": "6:00 AM - 6:00 PM",
+      "notice": "Please ensure pickup before 6:00 PM. Late pickup fees apply after closing time."
+    },
+    "cta": {
+      "title": "Questions About Our Schedule?",
+      "description": "Contact us if you have questions about specific dates or need to arrange alternative care during closures.",
+      "button": "Contact Us"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you! Reach out with questions or schedule a visit.",
+    "getInTouch": "Get in Touch",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours of Operation",
+    "hoursDetails": "Monday - Friday: 6:00 AM - 6:00 PM\nWeekends: Closed",
+    "sendMessage": "Send Us a Message",
+    "findUs": "Find Us"
+  },
+  "tour": {
+    "title": "Schedule a Tour",
+    "subtitle": "Experience our facility firsthand and meet our caring, professional staff",
+    "whatToExpect": {
+      "title": "What to Expect",
+      "duration": {
+        "title": "Duration",
+        "description": "Tours typically last 30 minutes, giving you plenty of time to see our facility and ask questions."
+      },
+      "whatYouSee": {
+        "title": "What You'll See",
+        "items": [
+          "All age-appropriate classrooms",
+          "Indoor and outdoor play areas",
+          "Learning and activity centers",
+          "Meal preparation and dining areas",
+          "Safety and security features"
+        ]
+      },
+      "meetTeam": {
+        "title": "Meet Our Team",
+        "description": "You'll have the opportunity to meet our experienced teachers and staff, and learn about their qualifications and approach to childcare."
+      },
+      "note": "Note: Tours are available Monday through Friday during regular business hours. We recommend scheduling at least 24 hours in advance."
+    },
+    "bookTour": "Book Your Tour",
+    "cta": {
+      "title": "Have Questions Before Booking?",
+      "description": "Feel free to call us or send a message if you'd like to discuss your needs before scheduling a tour.",
+      "callUs": "Call Us",
+      "contactUs": "Contact Us"
     }
   },
   "footer": {
     "contactUs": "Contact Us",
-    "hours": "Hours of Operation",
+    "hours": "Hours",
     "quickLinks": "Quick Links",
     "mondayFriday": "Monday - Friday",
     "weekends": "Weekends",
     "closed": "Closed",
-    "ourPrograms": "Our Programs",
-    "photoGallery": "Photo Gallery",
-    "calendarEvents": "Calendar & Events",
+    "time": "6:00 AM - 6:00 PM",
+    "tagline": "Providing quality childcare and education for over 20 years in Roselle, Illinois.",
+    "links": {
+      "programs": "Our Programs",
+      "gallery": "Photo Gallery",
+      "calendar": "Calendar & Events",
+      "tour": "Schedule a Tour"
+    },
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "allRightsReserved": "All rights reserved"

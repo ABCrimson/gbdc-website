@@ -1,8 +1,21 @@
 'use server'
 
+import { headers } from 'next/headers'
 import { revalidatePath } from 'next/cache'
+import { formRateLimit, getClientId, getTimeRemaining } from '@/lib/rate-limit'
 
 export async function sendContactForm(formData: FormData) {
+  // Check rate limit
+  const headersList = await headers()
+  const clientId = getClientId(headersList)
+  const rateLimitResult = formRateLimit.check(clientId)
+
+  if (!rateLimitResult.success) {
+    return {
+      error: `Too many requests. Please try again in ${getTimeRemaining(rateLimitResult.reset)}.`
+    }
+  }
+
   // Validate required fields
   const email = formData.get('email')?.toString()
   const message = formData.get('message')?.toString()

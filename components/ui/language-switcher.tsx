@@ -1,50 +1,39 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { usePathname, useRouter } from '@/i18n/navigation'
+import { useParams } from 'next/navigation'
+import { useTransition } from 'react'
 import { Button } from '@/components/ui/button'
+import { locales, localeNames } from '@/i18n.ts'
 
 const languages = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'uk', name: 'Українська', flag: '🇺🇦' },
+  { code: 'en', name: localeNames.en, flag: '🇺🇸' },
+  { code: 'es', name: localeNames.es, flag: '🇪🇸' },
+  { code: 'ru', name: localeNames.ru, flag: '🇷🇺' },
+  { code: 'uk', name: localeNames.uk, flag: '🇺🇦' },
 ]
 
 export function LanguageSwitcher() {
-  const [currentLocale, setCurrentLocale] = useState('en')
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    // Load saved locale from localStorage
-    const savedLocale = localStorage.getItem('locale') || 'en'
-    setCurrentLocale(savedLocale)
-    setMounted(true)
-  }, [])
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
+  const pathname = usePathname()
+  const params = useParams()
+  const currentLocale = params?.locale as string || 'en'
 
   const changeLanguage = (newLocale: string) => {
-    setCurrentLocale(newLocale)
-    localStorage.setItem('locale', newLocale)
-    // Reload page to apply new language
-    window.location.reload()
-  }
-
-  if (!mounted) {
-    return (
-      <Button variant="ghost" size="sm" className="gap-2">
-        <span>🇺🇸</span>
-        <span className="hidden sm:inline">EN</span>
-      </Button>
-    )
+    startTransition(() => {
+      router.replace(pathname, { locale: newLocale })
+    })
   }
 
   return (
     <div className="relative group">
-      <Button variant="ghost" size="sm" className="gap-2">
+      <Button variant="ghost" size="sm" className="gap-2" disabled={isPending}>
         <span>
           {languages.find((lang) => lang.code === currentLocale)?.flag || '🇺🇸'}
         </span>
         <span className="hidden sm:inline">
-          {languages.find((lang) => lang.code === currentLocale)?.code.toUpperCase() || 'EN'}
+          {currentLocale.toUpperCase()}
         </span>
         <svg
           className="w-4 h-4 transition-transform group-hover:rotate-180"
@@ -67,7 +56,8 @@ export function LanguageSwitcher() {
           <button
             key={lang.code}
             onClick={() => changeLanguage(lang.code)}
-            className={`w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-3 text-gray-900 dark:text-white ${
+            disabled={isPending}
+            className={`w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-3 text-gray-900 dark:text-white disabled:opacity-50 ${
               currentLocale === lang.code
                 ? 'bg-gray-50 dark:bg-gray-700'
                 : ''

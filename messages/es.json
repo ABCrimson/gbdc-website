@@ -7,25 +7,276 @@
     "contact": "Contacto",
     "scheduleTour": "Programar Visita",
     "learnMore": "Más Información",
-    "getStarted": "Comenzar"
+    "getStarted": "Comenzar",
+    "viewPrograms": "Ver Programas",
+    "contactUs": "Contáctenos",
+    "callUs": "Llámenos",
+    "emailUs": "Envíenos un Correo",
+    "findUs": "Encuéntrenos",
+    "language": "Idioma"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "programs": "Programas",
+    "gallery": "Galería",
+    "calendar": "Calendario",
+    "contact": "Contacto",
+    "scheduleTour": "Programar Visita"
   },
   "home": {
     "hero": {
       "title": "Guardería Great Beginnings",
       "subtitle": "Cuidado infantil de calidad para niños de 6 semanas a 12 años",
       "description": "Ambiente acogedor con personal experimentado, programas educativos y horarios flexibles en Roselle, IL"
+    },
+    "about": {
+      "title": "Bienvenido a Great Beginnings",
+      "paragraph1": "Durante más de 20 años, hemos brindado cuidado infantil de calidad en Roselle, Illinois. Nuestro personal experimentado crea un ambiente acogedor donde los niños pueden aprender, crecer y prosperar.",
+      "paragraph2": "Ofrecemos horarios flexibles, programas educativos y un ambiente seguro y atractivo para niños de 6 semanas a 12 años.",
+      "features": {
+        "licensed": {
+          "title": "Licenciada y Certificada",
+          "description": "Instalación aprobada por el estado"
+        },
+        "staff": {
+          "title": "Personal Experimentado",
+          "description": "Más de 20 años combinados"
+        },
+        "meals": {
+          "title": "Comidas Nutritivas",
+          "description": "Menú fresco diario"
+        },
+        "programs": {
+          "title": "Programas Educativos",
+          "description": "Currículum apropiado para cada edad"
+        }
+      }
+    },
+    "featuredPrograms": {
+      "title": "Nuestros Programas",
+      "subtitle": "Cuidado y educación apropiados para cada edad, adaptados a la etapa de desarrollo de su hijo",
+      "viewAll": "Ver Todos los Programas"
+    },
+    "activities": {
+      "title": "Nuestras Actividades Diarias y Currículum",
+      "subtitle": "Un enfoque integral para la educación temprana con actividades enriquecedoras y nutrición",
+      "nutrition": {
+        "title": "Comidas y Refrigerios Nutritivos",
+        "features": [
+          "Desayuno saludable, almuerzo y refrigerios de tarde proporcionados diariamente",
+          "Fruta fresca servida tres veces al día para una nutrición óptima",
+          "Programa especial de catering con comidas de alta calidad y apropiadas para niños",
+          "Comida nutritiva para bebés proporcionada para nuestros alumnos más pequeños"
+        ]
+      },
+      "curriculum": {
+        "title": "Currículum Enriquecedor",
+        "features": [
+          "Currículum específico para cada edad adaptado a las necesidades de desarrollo de cada aula",
+          "Sesiones semanales de enriquecimiento musical con un educador musical profesional",
+          "Programas especiales de entretenimiento cada semana con actividades atractivas que los niños adoran",
+          "Maestros experimentados y cariñosos dedicados a fomentar el crecimiento de cada niño"
+        ]
+      },
+      "description": "Nuestro programa diario integral garantiza que su hijo reciba no solo un cuidado excepcional, sino también la base educativa y las actividades de enriquecimiento que fomentan la creatividad, la curiosidad y la confianza. Cada aspecto de nuestro currículum está diseñado teniendo en cuenta el desarrollo y la felicidad de su hijo."
+    },
+    "nature": {
+      "title": "Donde el Aprendizaje se Encuentra con la Naturaleza",
+      "description": "En Great Beginnings, creemos en conectar a los niños con la belleza del mundo natural mientras brindamos cuidado y educación excepcionales.",
+      "scheduleVisit": "Programe su Visita",
+      "explorePrograms": "Explorar Programas"
+    },
+    "location": {
+      "title": "Visítenos",
+      "description": "Venga a ver nuestras hermosas instalaciones y conozca a nuestro personal afectuoso"
+    }
+  },
+  "programs": {
+    "title": "Nuestros Programas",
+    "subtitle": "Cuidado y educación apropiados para cada edad para niños de 6 semanas a 12 años",
+    "detailsTitle": "Detalles del Programa",
+    "detailsSubtitle": "Información completa sobre cada uno de nuestros programas cuidadosamente diseñados",
+    "tuition": "Matrícula",
+    "weeklyRate": "Tarifa Semanal",
+    "dailyRate": "Tarifa Diaria",
+    "schedule": "Horario",
+    "features": "Características",
+    "cta": {
+      "title": "¿Tiene preguntas sobre nuestros programas?",
+      "scheduleTour": "Programar una Visita",
+      "contactUs": "Contáctenos"
+    },
+    "list": {
+      "infants": {
+        "name": "Bebés",
+        "ageRange": "6 semanas - 18 meses",
+        "description": "Cuidado acogedor para nuestros alumnos más jóvenes con enfoque en exploración sensorial, desarrollo motor y establecimiento de rutinas en un ambiente seguro y amoroso.",
+        "features": [
+          "Proporción baja de maestros por niño",
+          "Ambiente seguro y limpio",
+          "Horarios de cuidado individualizados",
+          "Informes diarios para los padres",
+          "Actividades apropiadas para la edad",
+          "Comida para bebés proporcionada"
+        ]
+      },
+      "toddlers": {
+        "name": "Niños Pequeños",
+        "ageRange": "18 meses - 2 años",
+        "description": "Fomentando la independencia y las habilidades sociales a través del aprendizaje basado en el juego, actividades estructuradas y desarrollo del lenguaje.",
+        "features": [
+          "Apoyo para el entrenamiento del baño",
+          "Enfoque en el desarrollo del lenguaje",
+          "Actividades de interacción social",
+          "Juego creativo y artes",
+          "Tiempo de juego al aire libre",
+          "Música y movimiento"
+        ]
+      },
+      "twoYearOlds": {
+        "name": "Niños de Dos Años",
+        "ageRange": "2 años",
+        "description": "Construyendo habilidades fundamentales a través de la exploración práctica, la expresión creativa y el desarrollo de la conciencia socioemocional.",
+        "features": [
+          "Currículum diario estructurado",
+          "Desarrollo de habilidades sociales",
+          "Introducción a la alfabetización temprana",
+          "Actividades motoras finas y gruesas",
+          "Artes y manualidades creativas",
+          "Tiempo de círculo en grupo"
+        ]
+      },
+      "threeYearOlds": {
+        "name": "Niños de Tres Años",
+        "ageRange": "3 años",
+        "description": "Fomentando la curiosidad y el aprendizaje a través de un currículum apropiado para la edad, actividades de resolución de problemas y juego cooperativo.",
+        "features": [
+          "Pre-lectura y matemáticas tempranas",
+          "Exploración científica",
+          "Actividades de pensamiento creativo",
+          "Juego cooperativo y compartir",
+          "Actividades de música y ritmo",
+          "Experiencias de aprendizaje al aire libre"
+        ]
+      },
+      "fourFiveYearOlds": {
+        "name": "Niños de Cuatro/Cinco Años",
+        "ageRange": "4 - 5 años",
+        "description": "Preparación integral para el jardín de infantes con alfabetización temprana, conceptos matemáticos y desarrollo de habilidades de pensamiento crítico y resolución de problemas.",
+        "features": [
+          "Preparación para el jardín de infantes",
+          "Actividades STEAM",
+          "Tiempo de círculo y aprendizaje en grupo",
+          "Desarrollo de habilidades motoras finas",
+          "Construcción del carácter",
+          "Habilidades de escritura temprana"
+        ]
+      },
+      "beforeAfterSchool": {
+        "name": "Antes o Después de la Escuela",
+        "ageRange": "5 - 12 años",
+        "description": "Cuidado antes y después de la escuela con apoyo de tareas, actividades de enriquecimiento y programas de campamento de verano para niños en edad escolar.",
+        "features": [
+          "Asistencia con tareas",
+          "Proyectos STEM",
+          "Deportes y actividades físicas",
+          "Artes y manualidades",
+          "Programa de campamento de verano",
+          "Refrigerios saludables proporcionados"
+        ]
+      }
+    }
+  },
+  "gallery": {
+    "title": "Galería de Fotos",
+    "subtitle": "Haga un recorrido virtual de nuestras instalaciones y vea dónde su hijo aprenderá y jugará",
+    "cta": {
+      "title": "Vea Nuestras Instalaciones en Persona",
+      "description": "Las fotos solo pueden mostrar tanto. Programe un recorrido para experimentar nuestro ambiente cálido y acogedor de primera mano y conocer a nuestro personal dedicado.",
+      "button": "Programar una Visita"
+    }
+  },
+  "calendar": {
+    "title": "Calendario y Eventos",
+    "subtitle": "Manténgase informado sobre eventos próximos, días festivos y fechas de cierre",
+    "upcomingEvents": {
+      "title": "Eventos y Cierres Próximos",
+      "description": "Observamos los días festivos principales y cerramos para días de capacitación del personal. Por favor, planifique en consecuencia."
+    },
+    "regularHours": {
+      "title": "Horario Regular",
+      "mondayFriday": "Lunes - Viernes",
+      "weekends": "Fines de Semana",
+      "closed": "Cerrado",
+      "time": "6:00 AM - 6:00 PM",
+      "notice": "Por favor, asegúrese de recoger antes de las 6:00 PM. Se aplican tarifas de recogida tardía después del horario de cierre."
+    },
+    "cta": {
+      "title": "¿Preguntas Sobre Nuestro Horario?",
+      "description": "Contáctenos si tiene preguntas sobre fechas específicas o necesita organizar cuidado alternativo durante los cierres.",
+      "button": "Contáctenos"
+    }
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "subtitle": "¡Nos encantaría saber de usted! Comuníquese con preguntas o programe una visita.",
+    "getInTouch": "Póngase en Contacto",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico",
+    "hours": "Horario de Operación",
+    "hoursDetails": "Lunes - Viernes: 6:00 AM - 6:00 PM\nFines de Semana: Cerrado",
+    "sendMessage": "Envíenos un Mensaje",
+    "findUs": "Encuéntrenos"
+  },
+  "tour": {
+    "title": "Programar una Visita",
+    "subtitle": "Experimente nuestras instalaciones de primera mano y conozca a nuestro personal afectuoso y profesional",
+    "whatToExpect": {
+      "title": "Qué Esperar",
+      "duration": {
+        "title": "Duración",
+        "description": "Los recorridos suelen durar 30 minutos, dándole mucho tiempo para ver nuestras instalaciones y hacer preguntas."
+      },
+      "whatYouSee": {
+        "title": "Lo Que Verá",
+        "items": [
+          "Todas las aulas apropiadas para cada edad",
+          "Áreas de juego interiores y exteriores",
+          "Centros de aprendizaje y actividades",
+          "Áreas de preparación de comidas y comedor",
+          "Características de seguridad y protección"
+        ]
+      },
+      "meetTeam": {
+        "title": "Conozca a Nuestro Equipo",
+        "description": "Tendrá la oportunidad de conocer a nuestros maestros y personal experimentados, y aprender sobre sus calificaciones y enfoque del cuidado infantil."
+      },
+      "note": "Nota: Los recorridos están disponibles de lunes a viernes durante el horario comercial regular. Recomendamos programar con al menos 24 horas de anticipación."
+    },
+    "bookTour": "Reserve su Visita",
+    "cta": {
+      "title": "¿Tiene Preguntas Antes de Reservar?",
+      "description": "No dude en llamarnos o enviar un mensaje si desea discutir sus necesidades antes de programar un recorrido.",
+      "callUs": "Llámenos",
+      "contactUs": "Contáctenos"
     }
   },
   "footer": {
     "contactUs": "Contáctenos",
-    "hours": "Horario de Operación",
+    "hours": "Horario",
     "quickLinks": "Enlaces Rápidos",
     "mondayFriday": "Lunes - Viernes",
     "weekends": "Fines de Semana",
     "closed": "Cerrado",
-    "ourPrograms": "Nuestros Programas",
-    "photoGallery": "Galería de Fotos",
-    "calendarEvents": "Calendario y Eventos",
+    "time": "6:00 AM - 6:00 PM",
+    "tagline": "Proporcionando cuidado infantil y educación de calidad durante más de 20 años en Roselle, Illinois.",
+    "links": {
+      "programs": "Nuestros Programas",
+      "gallery": "Galería de Fotos",
+      "calendar": "Calendario y Eventos",
+      "tour": "Programar una Visita"
+    },
     "privacyPolicy": "Política de Privacidad",
     "termsOfService": "Términos de Servicio",
     "allRightsReserved": "Todos los derechos reservados"

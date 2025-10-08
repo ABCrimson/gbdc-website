@@ -27,15 +27,20 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <Hero />
 
         {/* About Section - Warm Blue-to-Teal Gradient */}
         <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
-          {/* Decorative background elements */}
+          {/* Decorative background elements - 20% stronger */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-daycare-yellow/10 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-daycare-blue/10 rounded-full blur-3xl" />
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-daycare-yellow/12 rounded-full blur-3xl" />
+            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-daycare-blue/12 rounded-full blur-3xl" />
+            {/* Grid pattern overlay */}
+            <div className="absolute inset-0 opacity-[0.03]" style={{
+              backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)',
+              backgroundSize: '50px 50px'
+            }} />
           </div>
 
           <div className="container mx-auto max-w-6xl relative z-10">
@@ -60,7 +65,7 @@ export default function Home() {
                   <Button asChild className="bg-daycare-blue hover:bg-daycare-blue/90">
                     <Link href="/programs">View Programs</Link>
                   </Button>
-                  <Button asChild variant="outline" className="border-daycare-green text-daycare-green hover:bg-daycare-green hover:text-white">
+                  <Button asChild className="bg-white text-daycare-green hover:bg-white/90 shadow-md">
                     <Link href="/tour">Schedule Tour</Link>
                   </Button>
                 </div>
@@ -97,10 +102,13 @@ export default function Home() {
                     desc: 'Age-appropriate curriculum'
                   },
                 ].map((item, i) => (
-                  <div key={i} className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border-2 border-gray-200 dark:border-gray-800 p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-daycare-blue/30">
-                    <div className="mb-3">{item.icon}</div>
-                    <h3 className="font-semibold mb-1 text-gray-900 dark:text-white">{item.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
+                  <div key={i} className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border-2 border-white/60 dark:border-gray-700/60 p-6 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.5)] transition-all duration-300 hover:-translate-y-2 hover:border-white/80 dark:hover:border-gray-600/80 hover:bg-white/80 dark:hover:bg-gray-900/80">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-70" />
+                    <div className="relative">
+                      <div className="mb-3">{item.icon}</div>
+                      <h3 className="font-semibold mb-1 text-gray-900 dark:text-white">{item.title}</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>

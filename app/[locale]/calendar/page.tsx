@@ -11,7 +11,7 @@ export default function CalendarPage() {
   return (
     <>
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Hero Section - Blue-to-Teal Gradient */}
         <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981] dark:from-[#0B7BA7] dark:via-[#1BA397] dark:to-[#10B981]">
           {/* Animated gradient orbs */}
@@ -43,10 +43,10 @@ export default function CalendarPage() {
 
           <div className="container mx-auto max-w-4xl relative z-10">
             {/* Upcoming Events & Closures Card */}
-            <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl mb-8">
+            <div className="group bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl mb-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-daycare-blue/40">
               {/* Header with icon */}
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 rounded-xl bg-daycare-blue/10 dark:bg-daycare-blue/20">
+                <div className="p-3 rounded-xl bg-daycare-blue/10 dark:bg-daycare-blue/20 transition-colors group-hover:bg-daycare-blue/20 dark:group-hover:bg-daycare-blue/30">
                   <svg className="w-6 h-6 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
@@ -62,10 +62,10 @@ export default function CalendarPage() {
             </div>
 
             {/* Regular Hours Card */}
-            <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
+            <div className="group bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-daycare-green/40">
               {/* Header with icon */}
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 rounded-xl bg-daycare-green/10 dark:bg-daycare-green/20">
+                <div className="p-3 rounded-xl bg-daycare-green/10 dark:bg-daycare-green/20 transition-colors group-hover:bg-daycare-green/20 dark:group-hover:bg-daycare-green/30">
                   <svg className="w-6 h-6 text-daycare-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
