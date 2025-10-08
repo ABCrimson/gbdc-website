@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
 
-// Roselle, IL coordinates
-const ROSELLE_LOCATION = { lat: 41.9847, lng: -88.0797 }
+// Great Beginnings Day Care Center - 757 E Nerge Rd, Roselle, IL 60172
+const GBDC_LOCATION = { lat: 41.9847, lng: -88.0797 }
+const GBDC_ADDRESS = '757 E Nerge Rd, Roselle, IL 60172'
 
 export function GoogleMap() {
   const mapRef = useRef<HTMLDivElement>(null)
@@ -28,8 +29,8 @@ export function GoogleMap() {
 
         // Create map
         const map = new Map(mapRef.current, {
-          zoom: 15,
-          center: ROSELLE_LOCATION,
+          zoom: 16,
+          center: GBDC_LOCATION,
           mapId: 'GBDC_MAP', // Required for AdvancedMarkerElement
           disableDefaultUI: false,
           zoomControl: true,
@@ -41,8 +42,8 @@ export function GoogleMap() {
         // Create advanced marker
         new AdvancedMarkerElement({
           map,
-          position: ROSELLE_LOCATION,
-          title: 'Great Beginnings Day Care',
+          position: GBDC_LOCATION,
+          title: 'Great Beginnings Day Care Center - ' + GBDC_ADDRESS,
         })
       } catch (err) {
         console.error('Error loading Google Maps:', err)
@@ -69,7 +70,7 @@ export function GoogleMap() {
     <div
       ref={mapRef}
       className="w-full h-[400px] rounded-lg shadow-lg"
-      aria-label="Map showing Great Beginnings Day Care location in Roselle, IL"
+      aria-label="Map showing Great Beginnings Day Care Center at 757 E Nerge Rd, Roselle, IL 60172"
     />
   )
 }

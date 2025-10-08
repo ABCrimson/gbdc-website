@@ -12,7 +12,7 @@ export function Hero() {
 
       <div className="container mx-auto text-center relative z-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white animate-fade-in">
-          Great Beginnings Day Care
+          Great Beginnings Day Care Center
         </h1>
 
         <p className="text-xl md:text-2xl lg:text-3xl mb-4 text-gray-700 dark:text-gray-300 font-medium animate-slide-up">

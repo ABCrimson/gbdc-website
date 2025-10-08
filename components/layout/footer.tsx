@@ -13,8 +13,8 @@ export function Footer() {
               Contact Us
             </h3>
             <div className="space-y-2 text-sm text-gray-600">
-              <p>Great Beginnings Day Care</p>
-              <p>123 Main Street</p>
+              <p>Great Beginnings Day Care Center</p>
+              <p>757 E Nerge Rd</p>
               <p>Roselle, IL 60172</p>
               <p className="mt-3">
                 <a
@@ -85,7 +85,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-            <p>© {currentYear} Great Beginnings Day Care. All rights reserved.</p>
+            <p>© {currentYear} Great Beginnings Day Care Center. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="hover:text-daycare-blue transition-colors">
                 Privacy Policy

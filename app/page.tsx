@@ -12,7 +12,7 @@ export default function Home() {
         <section className="relative py-20 px-4 md:py-32 bg-gradient-to-br from-daycare-blue/10 to-daycare-green/10">
           <div className="container mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-white">
-              Great Beginnings Day Care
+              Great Beginnings Day Care Center
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300">
               Quality childcare for ages 6 weeks to 12 years
