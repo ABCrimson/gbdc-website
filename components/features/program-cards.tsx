@@ -45,7 +45,7 @@ export function ProgramCards() {
                       className="flex items-start text-sm text-gray-600 dark:text-gray-400"
                     >
                       <svg
-                        className="w-5 h-5 text-daycare-green mr-2 flex-shrink-0"
+                        className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
                         fill="currentColor"
                         viewBox="0 0 20 20"
                       >

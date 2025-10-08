@@ -52,7 +52,7 @@ export default function TourPage() {
                     <ul className="space-y-2 text-gray-700 dark:text-gray-300">
                       <li className="flex items-start">
                         <svg
-                          className="w-6 h-6 text-daycare-green mr-2 flex-shrink-0"
+                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -66,7 +66,7 @@ export default function TourPage() {
                       </li>
                       <li className="flex items-start">
                         <svg
-                          className="w-6 h-6 text-daycare-green mr-2 flex-shrink-0"
+                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -80,7 +80,7 @@ export default function TourPage() {
                       </li>
                       <li className="flex items-start">
                         <svg
-                          className="w-6 h-6 text-daycare-green mr-2 flex-shrink-0"
+                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -94,7 +94,7 @@ export default function TourPage() {
                       </li>
                       <li className="flex items-start">
                         <svg
-                          className="w-6 h-6 text-daycare-green mr-2 flex-shrink-0"
+                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -108,7 +108,7 @@ export default function TourPage() {
                       </li>
                       <li className="flex items-start">
                         <svg
-                          className="w-6 h-6 text-daycare-green mr-2 flex-shrink-0"
+                          className="w-4 h-4 text-daycare-green mr-2 flex-shrink-0 mt-0.5"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
