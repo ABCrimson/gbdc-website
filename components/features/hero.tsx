@@ -49,7 +49,7 @@ export function Hero() {
           >
             <Link href="/tour" className="flex items-center gap-2">
               <svg
-                className="w-5 h-5 transition-transform group-hover:scale-110"
+                className="w-4 h-4 transition-transform group-hover:scale-110"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ export function Hero() {
           >
             <Link href="/contact" className="flex items-center gap-2">
               <svg
-                className="w-5 h-5 transition-transform group-hover:scale-110"
+                className="w-4 h-4 transition-transform group-hover:scale-110"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -128,7 +128,7 @@ export function Hero() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg
-          className="w-6 h-6 text-muted-foreground"
+          className="w-4 h-4 text-muted-foreground"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
