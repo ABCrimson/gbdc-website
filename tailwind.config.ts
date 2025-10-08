@@ -18,6 +18,7 @@ export default {
       animation: {
         'slide-up': 'slideUp 0.3s ease-out',
         'fade-in': 'fadeIn 0.5s ease-in',
+        'scale-in': 'scaleIn 0.2s ease-out',
       },
       keyframes: {
         slideUp: {
@@ -28,7 +29,16 @@ export default {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        scaleIn: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
       },
+      // Enable container queries for program cards
+      containers: {
+        'card': '400px',
+        'gallery': '1200px',
+      }
     }
   },
   plugins: [],

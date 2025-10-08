@@ -1,0 +1,12 @@
+# robots.txt for Great Beginnings Day Care Center
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://greatbeginningsdaycare.com/sitemap.xml
+
+# Disallow admin or private paths (if any in future)
+# Disallow: /admin
+# Disallow: /api

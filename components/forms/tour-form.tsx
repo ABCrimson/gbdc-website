@@ -1,6 +1,7 @@
 'use client'
 
 import { useFormStatus } from 'react-dom'
+import { useTransition } from 'react'
 import toast from 'react-hot-toast'
 import { format, addDays } from 'date-fns'
 import { scheduleTour } from '@/app/actions/tour'
@@ -9,14 +10,15 @@ import { Spinner } from '@/components/ui/spinner'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
+  const [isPending, startTransition] = useTransition()
 
   return (
     <Button
       type="submit"
-      disabled={pending}
-      className="w-full bg-daycare-green hover:bg-daycare-green/90"
+      disabled={pending || isPending}
+      className="w-full bg-daycare-green hover:bg-daycare-green/90 transition-transform hover:scale-105"
     >
-      {pending ? <Spinner size="sm" /> : 'Schedule Tour'}
+      {(pending || isPending) ? <Spinner size="sm" /> : 'Schedule Tour'}
     </Button>
   )
 }

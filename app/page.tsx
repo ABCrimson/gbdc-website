@@ -5,6 +5,21 @@ import { GoogleMap } from '@/components/features/google-map'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import programs from '@/data/programs.json'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Great Beginnings Day Care Center | Quality Childcare in Roselle, IL',
+  description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL. Experienced staff, educational programs, and flexible schedules. Schedule a tour today!',
+  keywords: ['daycare', 'childcare', 'preschool', 'Roselle IL', 'infant care', 'toddler care', 'school age care'],
+  openGraph: {
+    title: 'Great Beginnings Day Care Center',
+    description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL',
+    url: 'https://greatbeginningsdaycare.com',
+    siteName: 'Great Beginnings Day Care Center',
+    locale: 'en_US',
+    type: 'website',
+  },
+}
 
 export default function Home() {
   // Show only first 2 programs as preview
