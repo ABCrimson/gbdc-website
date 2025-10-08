@@ -1,10 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    reactCompiler: true,
-    ppr: true, // Partial prerendering
-    turbo: true,
-  },
   images: {
     remotePatterns: [
       {
