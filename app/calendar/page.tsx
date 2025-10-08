@@ -43,7 +43,7 @@ export default function CalendarPage() {
 
           <div className="container mx-auto max-w-4xl relative z-10">
             {/* Upcoming Events & Closures Card */}
-            <div className="bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl mb-8">
+            <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl mb-8">
               {/* Header with icon */}
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-3 rounded-xl bg-daycare-blue/10 dark:bg-daycare-blue/20">
@@ -62,7 +62,7 @@ export default function CalendarPage() {
             </div>
 
             {/* Regular Hours Card */}
-            <div className="bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
+            <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
               {/* Header with icon */}
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 rounded-xl bg-daycare-green/10 dark:bg-daycare-green/20">

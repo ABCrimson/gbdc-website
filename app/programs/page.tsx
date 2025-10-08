@@ -1,6 +1,5 @@
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
-import { ProgramCards } from '@/components/features/program-cards'
 import programs from '@/data/programs.json'
 
 export const metadata = {
@@ -47,7 +46,7 @@ export default function ProgramsPage() {
 
           {/* Glassmorphism container */}
           <div className="container mx-auto text-center relative">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/75 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-daycare-blue via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient">
                 Our Programs
               </h1>
@@ -55,13 +54,6 @@ export default function ProgramsPage() {
                 Age-appropriate care and education for children from 6 weeks to 12 years
               </p>
             </div>
-          </div>
-        </section>
-
-        {/* Programs Grid */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto">
-            <ProgramCards />
           </div>
         </section>
 
@@ -85,7 +77,7 @@ export default function ProgramsPage() {
               {programs.map((program, index) => (
                 <div
                   key={program.id}
-                  className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+                  className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                   style={{
                     animationDelay: `${index * 100}ms`,
                     borderTopWidth: '4px',

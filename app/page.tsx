@@ -128,25 +128,30 @@ export default function Home() {
               {featuredPrograms.map((program, index) => (
                 <div
                   key={program.id}
-                  className="group card animate-slide-up"
+                  className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 animate-slide-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-daycare-blue/10 flex items-center justify-center mb-4 group-hover:bg-daycare-blue/20 transition-colors">
-                      <svg className="w-5 h-5 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
+                  {/* Gradient accent on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-daycare-blue/5 to-daycare-green/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  <div className="relative">
+                    <div className="mb-4">
+                      <div className="w-12 h-12 rounded-xl bg-daycare-blue/10 dark:bg-daycare-blue/20 flex items-center justify-center mb-4 group-hover:bg-daycare-blue/20 dark:group-hover:bg-daycare-blue/30 transition-colors">
+                        <svg className="w-6 h-6 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-daycare-blue dark:group-hover:text-daycare-blue transition-colors">
+                        {program.name}
+                      </h3>
+                      <p className="text-sm font-semibold text-daycare-green mb-3">
+                        {program.ageRange}
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-daycare-blue transition-colors">
-                      {program.name}
-                    </h3>
-                    <p className="text-sm font-semibold text-daycare-green mb-3">
-                      {program.ageRange}
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                      {program.description}
                     </p>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {program.description}
-                  </p>
                 </div>
               ))}
             </div>
@@ -184,7 +189,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {/* Nutrition & Meals */}
-              <div className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <div className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-daycare-green/5 to-daycare-yellow/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative">
                   <div className="w-12 h-12 rounded-xl bg-daycare-green/10 flex items-center justify-center mb-4">
@@ -225,7 +230,7 @@ export default function Home() {
               </div>
 
               {/* Educational Programs */}
-              <div className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <div className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-daycare-blue/5 to-daycare-green/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative">
                   <div className="w-12 h-12 rounded-xl bg-daycare-blue/10 flex items-center justify-center mb-4">
@@ -267,7 +272,7 @@ export default function Home() {
             </div>
 
             {/* Additional highlight */}
-            <div className="text-center bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-white/20 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
+            <div className="text-center bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-white/20 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
                 Our comprehensive daily program ensures your child receives not only exceptional care but also the educational foundation and enrichment activities that foster creativity, curiosity, and confidence. Every aspect of our curriculum is designed with your child's development and happiness in mind.
               </p>

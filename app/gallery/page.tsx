@@ -36,7 +36,7 @@ export default function GalleryPage() {
 
           {/* Glassmorphism container */}
           <div className="container mx-auto text-center relative">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/75 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-daycare-blue via-daycare-yellow to-daycare-green bg-clip-text text-transparent animate-gradient">
                 Photo Gallery
               </h1>

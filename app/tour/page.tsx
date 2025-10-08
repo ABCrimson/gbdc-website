@@ -22,7 +22,7 @@ export default function TourPage() {
 
           {/* Glassmorphism container */}
           <div className="container mx-auto text-center relative">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/75 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-daycare-yellow via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient">
                 Schedule a Tour
               </h1>
@@ -38,7 +38,7 @@ export default function TourPage() {
           <div className="container mx-auto max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Tour Information */}
-              <div className="bg-white dark:bg-gray-900/40 border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
+              <div className="bg-white dark:bg-gray-900/75 border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-yellow to-daycare-green bg-clip-text text-transparent">
                   What to Expect
                 </h2>
@@ -156,7 +156,7 @@ export default function TourPage() {
                 <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-green to-daycare-blue bg-clip-text text-transparent">
                   Book Your Tour
                 </h2>
-                <div className="bg-white dark:bg-gray-900/60 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
+                <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                   <TourForm />
                 </div>
               </div>
