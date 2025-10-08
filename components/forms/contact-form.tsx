@@ -1,11 +1,12 @@
 'use client'
 
 import { useFormStatus } from 'react-dom'
-import { useTransition } from 'react'
+import { useActionState } from 'react'
 import toast from 'react-hot-toast'
 import { sendContactForm } from '@/app/actions/contact'
 import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
+import { FormStatus } from '@/components/ui/form-status'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -34,27 +35,26 @@ function SubmitButton() {
 }
 
 export function ContactForm() {
-  const [isPending, startTransition] = useTransition()
+  // React 19 useActionState for better form state management
+  const [state, formAction, isPending] = useActionState(
+    async (prevState: any, formData: FormData) => {
+      const result = await sendContactForm(formData)
 
-  async function handleSubmit(formData: FormData) {
-    startTransition(() => {
-      // Using react-hot-toast 2.6.0 promise-based toast with React 19 useTransition
-      toast.promise(
-        sendContactForm(formData),
-        {
-          loading: 'Sending your message...',
-          success: (data) => {
-            if (data.error) throw new Error(data.error)
-            return "Thank you! We'll be in touch soon."
-          },
-          error: (err) => err.message || 'Something went wrong. Please try again.'
-        }
-      )
-    })
-  }
+      if (result.error) {
+        toast.error(result.error)
+        return { error: result.error, success: false }
+      }
+
+      toast.success("Thank you! We'll be in touch soon.")
+      return { success: true, error: null }
+    },
+    { success: false, error: null }
+  )
 
   return (
-    <form action={handleSubmit} className="space-y-6">
+    <form action={formAction} className="space-y-6">
+      {state.error && <FormStatus message={state.error} type="error" />}
+      {state.success && <FormStatus message="Message sent successfully!" type="success" />}
       <div className="space-y-2">
         <label htmlFor="name" className="block text-sm font-semibold text-white dark:text-white">
           Your Name <span className="text-red-400">*</span>

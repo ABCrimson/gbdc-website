@@ -1,12 +1,13 @@
 'use client'
 
 import { useFormStatus } from 'react-dom'
-import { useTransition } from 'react'
+import { useActionState } from 'react'
 import toast from 'react-hot-toast'
 import { format, addDays } from 'date-fns'
 import { scheduleTour } from '@/app/actions/tour'
 import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
+import { FormStatus } from '@/components/ui/form-status'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
@@ -48,40 +49,29 @@ const ageOptions = [
 ]
 
 export function TourForm() {
-  const [isPending, startTransition] = useTransition()
+  // React 19 useActionState for better form state management
+  const [state, formAction, isPending] = useActionState(
+    async (prevState: any, formData: FormData) => {
+      const result = await scheduleTour(formData)
 
-  async function handleSubmit(formData: FormData) {
-    startTransition(() => {
-      // Using react-hot-toast 2.6.0 promise-based toast with React 19 useTransition
-      const promise = scheduleTour(formData)
+      if (result.error) {
+        toast.error(result.error)
+        return { error: result.error, success: false }
+      }
 
-      toast.promise(
-        promise,
-        {
-          loading: 'Scheduling your tour...',
-          success: (data) => {
-            if (data.error) throw new Error(data.error)
-            return data.message || 'Tour scheduled successfully! We\'ll contact you soon.'
-          },
-          error: (err) => err.message || 'Failed to schedule tour. Please try again.'
-        }
-      )
-
-      // Reset form after successful submission
-      promise.then((result) => {
-        if (result.success) {
-          const form = document.querySelector('form') as HTMLFormElement
-          form?.reset()
-        }
-      })
-    })
-  }
+      toast.success(result.message || "Tour scheduled successfully! We'll contact you soon.")
+      return { success: true, error: null, message: result.message }
+    },
+    { success: false, error: null, message: null }
+  )
 
   // Generate minimum date (tomorrow) using date-fns 4.1.0
   const minDate = format(addDays(new Date(), 1), 'yyyy-MM-dd')
 
   return (
-    <form action={handleSubmit} className="space-y-6">
+    <form action={formAction} className="space-y-6">
+      {state.error && <FormStatus message={state.error} type="error" />}
+      {state.success && <FormStatus message={state.message || "Tour scheduled successfully!"} type="success" />}
       <div className="space-y-2">
         <label htmlFor="parentName" className="block text-sm font-semibold text-white dark:text-white">
           Parent/Guardian Name <span className="text-red-400">*</span>

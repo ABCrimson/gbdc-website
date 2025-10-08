@@ -259,10 +259,10 @@ export default function Home() {
           {/* Content */}
           <div className="container mx-auto px-4 py-32 relative z-10">
             <div className="max-w-4xl mx-auto text-center text-white">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6 text-shadow-lg">
                 {t('home.nature.title')}
               </h2>
-              <p className="text-xl md:text-2xl mb-8 drop-shadow-md leading-relaxed">
+              <p className="text-xl md:text-2xl mb-8 text-shadow-md leading-relaxed">
                 {t('home.nature.description')}
               </p>
               <div className="flex gap-4 justify-center flex-wrap">

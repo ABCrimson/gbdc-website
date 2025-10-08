@@ -26,10 +26,10 @@ export default function TourPage() {
           {/* Content container */}
           <div className="container mx-auto text-center relative">
             <div className="p-12">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white text-shadow-xl">
                 {t('title')}
               </h1>
-              <p className="text-xl text-white/95 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+              <p className="text-xl text-white/95 max-w-2xl mx-auto leading-relaxed text-shadow-lg">
                 {t('subtitle')}
               </p>
             </div>

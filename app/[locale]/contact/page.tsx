@@ -104,7 +104,7 @@ export default function ContactPage() {
 
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-white drop-shadow-lg">
+                <h2 className="text-3xl font-bold mb-6 text-white text-shadow-lg">
                   {t('sendMessage')}
                 </h2>
                 <div className="bg-white dark:bg-gray-900/85 dark:backdrop-blur-xl border-2 border-gray-200 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
