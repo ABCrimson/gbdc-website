@@ -65,7 +65,7 @@ export function ContactForm() {
           type="text"
           required
           placeholder="John Doe"
-          className="input"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -80,7 +80,7 @@ export function ContactForm() {
           type="email"
           required
           placeholder="john@example.com"
-          className="input"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -94,7 +94,7 @@ export function ContactForm() {
           name="phone"
           type="tel"
           placeholder="(555) 123-4567"
-          className="input"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -109,7 +109,7 @@ export function ContactForm() {
           required
           placeholder="Tell us about your childcare needs..."
           rows={5}
-          className="textarea"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>

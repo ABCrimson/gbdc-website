@@ -92,7 +92,7 @@ export function TourForm() {
           type="text"
           required
           placeholder="Jane Smith"
-          className="input"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -107,7 +107,7 @@ export function TourForm() {
           type="email"
           required
           placeholder="jane@example.com"
-          className="input"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -122,7 +122,7 @@ export function TourForm() {
           type="tel"
           required
           placeholder="(555) 123-4567"
-          className="input"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -135,7 +135,7 @@ export function TourForm() {
           id="childAge"
           name="childAge"
           required
-          className="select"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUw2IDZMMTEgMSIgc3Ryb2tlPSIjOTk5OTk5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==')] bg-[length:12px_8px] bg-[position:right_1rem_center] bg-no-repeat pr-10"
           disabled={isPending}
         >
           <option value="">Select age range...</option>
@@ -157,7 +157,7 @@ export function TourForm() {
           type="date"
           required
           min={minDate}
-          className="input"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -171,7 +171,7 @@ export function TourForm() {
           name="notes"
           placeholder="Any specific questions or requirements..."
           rows={4}
-          className="textarea"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-foreground placeholder:text-muted-foreground focus:border-daycare-green focus:ring-2 focus:ring-daycare-green/20 transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>

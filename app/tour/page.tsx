@@ -12,15 +12,24 @@ export default function TourPage() {
     <>
       <Header />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-daycare-blue/10 to-daycare-green/10 dark:from-daycare-blue/5 dark:to-daycare-green/5 py-16 px-4">
-          <div className="container mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-              Schedule a Tour
-            </h1>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-              Experience our facility firsthand and meet our caring, professional staff
-            </p>
+        {/* Hero Section - 2025 Glassmorphism Design */}
+        <section className="relative py-24 px-4 overflow-hidden">
+          {/* Animated gradient orbs */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-1/3 w-96 h-96 bg-daycare-yellow/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.2s' }} />
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-daycare-green/20 rounded-full blur-3xl animate-pulse-slow" />
+          </div>
+
+          {/* Glassmorphism container */}
+          <div className="container mx-auto text-center relative">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-gray-900/40 border border-white/20 dark:border-gray-700/20 rounded-3xl p-12 shadow-2xl">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-daycare-yellow via-daycare-green to-daycare-blue bg-clip-text text-transparent animate-gradient">
+                Schedule a Tour
+              </h1>
+              <p className="text-xl text-gray-800 dark:text-gray-200 max-w-2xl mx-auto leading-relaxed">
+                Experience our facility firsthand and meet our caring, professional staff
+              </p>
+            </div>
           </div>
         </section>
 
@@ -30,7 +39,7 @@ export default function TourPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Tour Information */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-yellow to-daycare-green bg-clip-text text-transparent">
                   What to Expect
                 </h2>
 
@@ -144,10 +153,10 @@ export default function TourPage() {
 
               {/* Tour Booking Form */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-green to-daycare-blue bg-clip-text text-transparent">
                   Book Your Tour
                 </h2>
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div className="backdrop-blur-xl bg-white/60 dark:bg-gray-900/60 border border-white/20 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                   <TourForm />
                 </div>
               </div>
@@ -167,7 +176,7 @@ export default function TourPage() {
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <a
-                href="tel:+16305551234"
+                href="tel:+16308943440"
                 className="inline-flex items-center px-8 py-3 bg-daycare-blue text-white rounded-lg hover:bg-daycare-blue/90 transition-colors text-lg font-medium"
               >
                 Call Us

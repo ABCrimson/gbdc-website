@@ -40,7 +40,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-green to-daycare-blue bg-clip-text text-transparent">
                   Get in Touch
                 </h2>
 
@@ -66,10 +66,10 @@ export default function ContactPage() {
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300">
                       <a
-                        href="tel:+16305551234"
+                        href="tel:+16308943440"
                         className="hover:text-daycare-blue transition-colors"
                       >
-                        (630) 555-1234
+                        (630) 894-3440
                       </a>
                     </p>
                   </div>
@@ -105,10 +105,10 @@ export default function ContactPage() {
 
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-daycare-blue to-daycare-green bg-clip-text text-transparent">
                   Send Us a Message
                 </h2>
-                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <div className="backdrop-blur-xl bg-white/60 dark:bg-gray-900/60 border border-white/20 dark:border-gray-700/20 rounded-2xl p-8 shadow-xl">
                   <ContactForm />
                 </div>
               </div>
