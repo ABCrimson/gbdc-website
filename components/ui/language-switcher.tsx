@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 
 const languages = [
@@ -11,17 +11,30 @@ const languages = [
 ]
 
 export function LanguageSwitcher() {
-  const pathname = usePathname()
-  const router = useRouter()
+  const [currentLocale, setCurrentLocale] = useState('en')
+  const [mounted, setMounted] = useState(false)
 
-  // Extract current locale from pathname
-  const currentLocale = pathname.split('/')[1] || 'en'
+  useEffect(() => {
+    // Load saved locale from localStorage
+    const savedLocale = localStorage.getItem('locale') || 'en'
+    setCurrentLocale(savedLocale)
+    setMounted(true)
+  }, [])
 
   const changeLanguage = (newLocale: string) => {
-    // Remove current locale from pathname and add new one
-    const pathWithoutLocale = pathname.replace(/^\/[^\/]+/, '') || '/'
-    const newPath = `/${newLocale}${pathWithoutLocale}`
-    router.push(newPath)
+    setCurrentLocale(newLocale)
+    localStorage.setItem('locale', newLocale)
+    // Reload page to apply new language
+    window.location.reload()
+  }
+
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="sm" className="gap-2">
+        <span>🇺🇸</span>
+        <span className="hidden sm:inline">EN</span>
+      </Button>
+    )
   }
 
   return (
