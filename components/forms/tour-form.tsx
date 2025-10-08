@@ -10,15 +10,26 @@ import { Spinner } from '@/components/ui/spinner'
 
 function SubmitButton() {
   const { pending } = useFormStatus()
-  const [isPending, startTransition] = useTransition()
 
   return (
     <Button
       type="submit"
-      disabled={pending || isPending}
-      className="w-full bg-daycare-green hover:bg-daycare-green/90 transition-transform hover:scale-105"
+      disabled={pending}
+      className="w-full bg-daycare-green hover:bg-daycare-green/90 transition-all duration-300 hover:shadow-glow active:scale-95"
     >
-      {(pending || isPending) ? <Spinner size="sm" /> : 'Schedule Tour'}
+      {pending ? (
+        <span className="flex items-center gap-2">
+          <Spinner size="sm" />
+          Scheduling...
+        </span>
+      ) : (
+        <span className="flex items-center gap-2">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          Schedule Tour
+        </span>
+      )}
     </Button>
   )
 }
@@ -37,28 +48,32 @@ const ageOptions = [
 ]
 
 export function TourForm() {
+  const [isPending, startTransition] = useTransition()
+
   async function handleSubmit(formData: FormData) {
-    // Using react-hot-toast 2.6.0 promise-based toast
-    const promise = scheduleTour(formData)
+    startTransition(() => {
+      // Using react-hot-toast 2.6.0 promise-based toast with React 19 useTransition
+      const promise = scheduleTour(formData)
 
-    toast.promise(
-      promise,
-      {
-        loading: 'Scheduling your tour...',
-        success: (data) => {
-          if (data.error) throw new Error(data.error)
-          return data.message || 'Tour scheduled successfully!'
-        },
-        error: (err) => err.message || 'Failed to schedule tour. Please try again.'
-      }
-    )
+      toast.promise(
+        promise,
+        {
+          loading: 'Scheduling your tour...',
+          success: (data) => {
+            if (data.error) throw new Error(data.error)
+            return data.message || 'Tour scheduled successfully! We\'ll contact you soon.'
+          },
+          error: (err) => err.message || 'Failed to schedule tour. Please try again.'
+        }
+      )
 
-    // Reset form after successful submission
-    promise.then((result) => {
-      if (result.success) {
-        const form = document.querySelector('form') as HTMLFormElement
-        form?.reset()
-      }
+      // Reset form after successful submission
+      promise.then((result) => {
+        if (result.success) {
+          const form = document.querySelector('form') as HTMLFormElement
+          form?.reset()
+        }
+      })
     })
   }
 
@@ -66,10 +81,10 @@ export function TourForm() {
   const minDate = format(addDays(new Date(), 1), 'yyyy-MM-dd')
 
   return (
-    <form action={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="parentName" className="block text-sm font-medium mb-1">
-          Parent/Guardian Name *
+    <form action={handleSubmit} className="space-y-6">
+      <div className="space-y-2">
+        <label htmlFor="parentName" className="block text-sm font-semibold text-foreground">
+          Parent/Guardian Name <span className="text-red-500">*</span>
         </label>
         <input
           id="parentName"
@@ -77,13 +92,14 @@ export function TourForm() {
           type="text"
           required
           placeholder="Jane Smith"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-green focus:border-transparent dark:bg-gray-800"
+          className="input"
+          disabled={isPending}
         />
       </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1">
-          Email *
+      <div className="space-y-2">
+        <label htmlFor="email" className="block text-sm font-semibold text-foreground">
+          Email <span className="text-red-500">*</span>
         </label>
         <input
           id="email"
@@ -91,13 +107,14 @@ export function TourForm() {
           type="email"
           required
           placeholder="jane@example.com"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-green focus:border-transparent dark:bg-gray-800"
+          className="input"
+          disabled={isPending}
         />
       </div>
 
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium mb-1">
-          Phone Number *
+      <div className="space-y-2">
+        <label htmlFor="phone" className="block text-sm font-semibold text-foreground">
+          Phone Number <span className="text-red-500">*</span>
         </label>
         <input
           id="phone"
@@ -105,19 +122,21 @@ export function TourForm() {
           type="tel"
           required
           placeholder="(555) 123-4567"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-green focus:border-transparent dark:bg-gray-800"
+          className="input"
+          disabled={isPending}
         />
       </div>
 
-      <div>
-        <label htmlFor="childAge" className="block text-sm font-medium mb-1">
-          Child's Age Range *
+      <div className="space-y-2">
+        <label htmlFor="childAge" className="block text-sm font-semibold text-foreground">
+          Child's Age Range <span className="text-red-500">*</span>
         </label>
         <select
           id="childAge"
           name="childAge"
           required
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-green focus:border-transparent dark:bg-gray-800"
+          className="select"
+          disabled={isPending}
         >
           <option value="">Select age range...</option>
           {ageOptions.map((option) => (
@@ -128,9 +147,9 @@ export function TourForm() {
         </select>
       </div>
 
-      <div>
-        <label htmlFor="preferredDate" className="block text-sm font-medium mb-1">
-          Preferred Tour Date *
+      <div className="space-y-2">
+        <label htmlFor="preferredDate" className="block text-sm font-semibold text-foreground">
+          Preferred Tour Date <span className="text-red-500">*</span>
         </label>
         <input
           id="preferredDate"
@@ -138,20 +157,22 @@ export function TourForm() {
           type="date"
           required
           min={minDate}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-green focus:border-transparent dark:bg-gray-800"
+          className="input"
+          disabled={isPending}
         />
       </div>
 
-      <div>
-        <label htmlFor="notes" className="block text-sm font-medium mb-1">
-          Additional Notes (optional)
+      <div className="space-y-2">
+        <label htmlFor="notes" className="block text-sm font-semibold text-foreground">
+          Additional Notes <span className="text-muted-foreground text-xs">(optional)</span>
         </label>
         <textarea
           id="notes"
           name="notes"
           placeholder="Any specific questions or requirements..."
-          rows={3}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-green focus:border-transparent dark:bg-gray-800"
+          rows={4}
+          className="textarea"
+          disabled={isPending}
         />
       </div>
 

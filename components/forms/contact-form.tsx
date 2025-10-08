@@ -1,6 +1,7 @@
 'use client'
 
 import { useFormStatus } from 'react-dom'
+import { useTransition } from 'react'
 import toast from 'react-hot-toast'
 import { sendContactForm } from '@/app/actions/contact'
 import { Button } from '@/components/ui/button'
@@ -13,34 +14,50 @@ function SubmitButton() {
     <Button
       type="submit"
       disabled={pending}
-      className="w-full bg-daycare-blue hover:bg-daycare-blue/90"
+      className="w-full bg-daycare-blue hover:bg-daycare-blue/90 transition-all duration-300 hover:shadow-glow"
     >
-      {pending ? <Spinner size="sm" /> : 'Send Message'}
+      {pending ? (
+        <span className="flex items-center gap-2">
+          <Spinner size="sm" />
+          Sending...
+        </span>
+      ) : (
+        <span className="flex items-center gap-2">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+          </svg>
+          Send Message
+        </span>
+      )}
     </Button>
   )
 }
 
 export function ContactForm() {
+  const [isPending, startTransition] = useTransition()
+
   async function handleSubmit(formData: FormData) {
-    // Using react-hot-toast 2.6.0 promise-based toast
-    toast.promise(
-      sendContactForm(formData),
-      {
-        loading: 'Sending your message...',
-        success: (data) => {
-          if (data.error) throw new Error(data.error)
-          return "Thank you! We'll be in touch soon."
-        },
-        error: (err) => err.message || 'Something went wrong. Please try again.'
-      }
-    )
+    startTransition(() => {
+      // Using react-hot-toast 2.6.0 promise-based toast with React 19 useTransition
+      toast.promise(
+        sendContactForm(formData),
+        {
+          loading: 'Sending your message...',
+          success: (data) => {
+            if (data.error) throw new Error(data.error)
+            return "Thank you! We'll be in touch soon."
+          },
+          error: (err) => err.message || 'Something went wrong. Please try again.'
+        }
+      )
+    })
   }
 
   return (
-    <form action={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-1">
-          Your Name *
+    <form action={handleSubmit} className="space-y-6">
+      <div className="space-y-2">
+        <label htmlFor="name" className="block text-sm font-semibold text-foreground">
+          Your Name <span className="text-red-500">*</span>
         </label>
         <input
           id="name"
@@ -48,13 +65,14 @@ export function ContactForm() {
           type="text"
           required
           placeholder="John Doe"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-blue focus:border-transparent dark:bg-gray-800"
+          className="input"
+          disabled={isPending}
         />
       </div>
 
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-1">
-          Email *
+      <div className="space-y-2">
+        <label htmlFor="email" className="block text-sm font-semibold text-foreground">
+          Email <span className="text-red-500">*</span>
         </label>
         <input
           id="email"
@@ -62,34 +80,37 @@ export function ContactForm() {
           type="email"
           required
           placeholder="john@example.com"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-blue focus:border-transparent dark:bg-gray-800"
+          className="input"
+          disabled={isPending}
         />
       </div>
 
-      <div>
-        <label htmlFor="phone" className="block text-sm font-medium mb-1">
-          Phone (optional)
+      <div className="space-y-2">
+        <label htmlFor="phone" className="block text-sm font-semibold text-foreground">
+          Phone <span className="text-muted-foreground text-xs">(optional)</span>
         </label>
         <input
           id="phone"
           name="phone"
           type="tel"
           placeholder="(555) 123-4567"
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-blue focus:border-transparent dark:bg-gray-800"
+          className="input"
+          disabled={isPending}
         />
       </div>
 
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-1">
-          How can we help? *
+      <div className="space-y-2">
+        <label htmlFor="message" className="block text-sm font-semibold text-foreground">
+          How can we help? <span className="text-red-500">*</span>
         </label>
         <textarea
           id="message"
           name="message"
           required
           placeholder="Tell us about your childcare needs..."
-          rows={4}
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-daycare-blue focus:border-transparent dark:bg-gray-800"
+          rows={5}
+          className="textarea"
+          disabled={isPending}
         />
       </div>
 
