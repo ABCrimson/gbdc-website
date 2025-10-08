@@ -65,7 +65,9 @@ export function ContactForm() {
           type="text"
           required
           placeholder="John Doe"
-          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-required="true"
+          aria-invalid="false"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 user-valid:border-green-500 user-valid:focus:ring-green-500/20 user-invalid:border-red-500 user-invalid:focus:ring-red-500/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
@@ -80,9 +82,13 @@ export function ContactForm() {
           type="email"
           required
           placeholder="john@example.com"
-          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-required="true"
+          aria-invalid="false"
+          aria-describedby="email-format"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 user-valid:border-green-500 user-valid:focus:ring-green-500/20 user-invalid:border-red-500 user-invalid:focus:ring-red-500/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
+        <p id="email-format" className="sr-only">Please enter a valid email address</p>
       </div>
 
       <div className="space-y-2">
@@ -109,7 +115,9 @@ export function ContactForm() {
           required
           placeholder="Tell us about your childcare needs..."
           rows={5}
-          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-required="true"
+          aria-invalid="false"
+          className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:border-daycare-blue focus:ring-2 focus:ring-daycare-blue/20 user-valid:border-green-500 user-valid:focus:ring-green-500/20 user-invalid:border-red-500 user-invalid:focus:ring-red-500/20 transition-all duration-200 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isPending}
         />
       </div>
