@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo create:*)",
+      "Bash(curl:*)",
+      "Bash(bash)",
+      "Bash(~/.bun/bin/bun:*)",
+      "Bash(~/.bun/bin/bunx create-next-app@latest:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

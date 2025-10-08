@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(export PATH=\"$HOME/.bun/bin:$PATH\")",
+      "Bash(bun init:*)",
+      "Bash(bun add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: Initialize Next.js 15.5.4 project with Bun 1.2.23\n\n- Install Bun 1.2.23 runtime\n- Add React 19.2.0 and Next.js 15.5.4\n- Configure TypeScript 5.9.3 with ES2025 target\n- Setup Tailwind CSS 4.1.14 with custom daycare colors\n- Install EmailJS, Google Maps, date-fns, react-hot-toast\n- Create project structure (app/, components/, lib/, data/)\n- Configure next.config.mjs with PPR and Turbopack\n- Add dev scripts and prettier configuration\n- Setup environment variables template\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

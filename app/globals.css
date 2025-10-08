@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --daycare-blue: oklch(65% 0.2 230);
+    --daycare-yellow: oklch(85% 0.15 85);
+    --daycare-green: oklch(70% 0.18 145);
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-sm p-6;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px oklch(0% 0 0 / 0.1);
+    }
+  }
+
+  .btn-primary {
+    @apply bg-daycare-blue text-white px-6 py-3 rounded-lg font-semibold;
+    @apply hover:opacity-90 transition-opacity disabled:opacity-50;
+  }
+
+  .input {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-daycare-blue;
+  }
+
+  .textarea {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-daycare-blue resize-none;
+  }
+}
