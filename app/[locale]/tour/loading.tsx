@@ -1,13 +1,43 @@
-/**
- * Loading state for tour page
- */
-
 export default function Loading() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981]">
-      <div className="text-center">
-        <div className="inline-block animate-spin rounded-full h-16 w-16 border-b-4 border-white"></div>
-        <p className="mt-4 text-white text-lg font-medium">Loading Tour...</p>
+    <div className="min-h-screen">
+      {/* Hero skeleton with dark overlay */}
+      <div className="relative py-24 px-4 bg-gray-800">
+        <div className="container mx-auto text-center">
+          <div className="h-12 w-64 bg-white/20 rounded-lg animate-pulse mx-auto mb-4"></div>
+          <div className="h-6 w-96 bg-white/10 rounded animate-pulse mx-auto"></div>
+        </div>
+      </div>
+
+      {/* Tour info skeleton */}
+      <div className="py-16 px-4 bg-gradient-to-br from-[#0B7BA7] via-[#1BA397] to-[#10B981]">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Info skeleton */}
+            <div className="bg-white dark:bg-gray-900/75 rounded-2xl p-8 animate-pulse">
+              <div className="h-8 w-48 bg-gray-200 rounded mb-6"></div>
+              <div className="space-y-6">
+                {[...Array(3)].map((_, i) => (
+                  <div key={i}>
+                    <div className="h-6 w-32 bg-gray-200 rounded mb-3"></div>
+                    <div className="h-4 w-full bg-gray-200 rounded mb-2"></div>
+                    <div className="h-4 w-3/4 bg-gray-200 rounded"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Form skeleton */}
+            <div className="bg-white dark:bg-gray-900/85 rounded-2xl p-8 animate-pulse">
+              <div className="space-y-4">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="h-12 w-full bg-gray-200 rounded"></div>
+                ))}
+                <div className="h-12 w-32 bg-gray-200 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )

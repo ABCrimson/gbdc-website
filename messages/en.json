@@ -280,5 +280,8 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "allRightsReserved": "All rights reserved"
+  },
+  "accessibility": {
+    "skipToMain": "Skip to main content"
   }
 }
