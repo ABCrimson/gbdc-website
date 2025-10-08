@@ -18,7 +18,8 @@
       "Bash(awk:*)",
       "Bash(xargs:*)",
       "Bash(done)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(bunx shadcn@latest add:*)"
     ],
     "deny": [],
     "ask": []

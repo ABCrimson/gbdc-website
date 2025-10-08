@@ -1,0 +1,58 @@
+[
+  {
+    "id": "infant",
+    "name": "Infant Care",
+    "ageRange": "6 weeks - 18 months",
+    "description": "Nurturing care for our youngest learners with focus on sensory exploration, motor development, and establishing routines.",
+    "features": [
+      "Low teacher-to-child ratio",
+      "Safe, clean environment",
+      "Individualized care schedules",
+      "Daily reports for parents",
+      "Age-appropriate activities"
+    ],
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM"
+  },
+  {
+    "id": "toddler",
+    "name": "Toddler Program",
+    "ageRange": "18 - 36 months",
+    "description": "Encouraging independence and social skills through play-based learning and structured activities.",
+    "features": [
+      "Potty training support",
+      "Language development focus",
+      "Social interaction activities",
+      "Creative play and arts",
+      "Outdoor play time"
+    ],
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM"
+  },
+  {
+    "id": "preschool",
+    "name": "Preschool",
+    "ageRange": "3 - 5 years",
+    "description": "Preparing for kindergarten with early literacy, math concepts, and developing problem-solving skills.",
+    "features": [
+      "Kindergarten readiness",
+      "STEAM activities",
+      "Circle time and group learning",
+      "Fine motor skill development",
+      "Character building"
+    ],
+    "schedule": "Monday - Friday, 6:00 AM - 6:00 PM"
+  },
+  {
+    "id": "school-age",
+    "name": "School-Age Care",
+    "ageRange": "5 - 12 years",
+    "description": "Before and after school care with homework support, enrichment activities, and summer camp programs.",
+    "features": [
+      "Homework assistance",
+      "STEM projects",
+      "Sports and physical activities",
+      "Arts and crafts",
+      "Summer camp program"
+    ],
+    "schedule": "Before School: 6:00 AM - 8:30 AM | After School: 3:00 PM - 6:00 PM"
+  }
+]
