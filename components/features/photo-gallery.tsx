@@ -24,8 +24,8 @@ export function PhotoGallery() {
         })
 
         // NEW: Import specific libraries
-        const { PlacesService } = await loader.importLibrary('places')
-        const { Map } = await loader.importLibrary('maps')
+        const { PlacesService } = await (loader as any).importLibrary('places')
+        const { Map } = await (loader as any).importLibrary('maps')
 
         // PlacesService requires a map element
         const mapDiv = document.createElement('div')
@@ -44,9 +44,9 @@ export function PhotoGallery() {
             placeId: placeId,
             fields: ['photos', 'name']
           },
-          (place, status) => {
+          (place: any, status: any) => {
             if (status === 'OK' && place?.photos) {
-              const photoUrls = place.photos.slice(0, 12).map(photo => ({
+              const photoUrls = place.photos.slice(0, 12).map((photo: any) => ({
                 url: photo.getUrl({ maxWidth: 1200, maxHeight: 800 }),
                 attribution: photo.html_attributions?.[0] || ''
               }))

@@ -14,14 +14,7 @@ interface Program {
   ageRange: string
   description: string
   features: string[]
-  schedule?: {
-    arrival: string
-    meals: string[]
-    activities: string[]
-    departure: string
-  }
-  ratio?: string
-  meals?: string[]
+  schedule?: string
 }
 
 export default function ProgramsPage() {
@@ -56,7 +49,7 @@ export default function ProgramsPage() {
             </h2>
 
             <div className="space-y-8">
-              {(programs as Program[]).map((program) => (
+              {programs.map((program) => (
                 <div
                   key={program.id}
                   className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
@@ -65,42 +58,33 @@ export default function ProgramsPage() {
                     {program.name}
                   </h3>
 
-                  {/* Teacher Ratios */}
-                  {program.ratio && (
-                    <div className="mb-4">
-                      <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
-                        Teacher-to-Child Ratio: <span className="text-daycare-green">{program.ratio}</span>
-                      </p>
-                    </div>
-                  )}
+                  <p className="text-gray-700 dark:text-gray-300 mb-4">
+                    {program.description}
+                  </p>
 
-                  {/* Daily Schedule */}
+                  {/* Schedule */}
                   {program.schedule && (
                     <div className="mb-4">
                       <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                        Daily Schedule
-                      </h4>
-                      <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
-                        <li>• Arrival: {program.schedule.arrival}</li>
-                        {program.schedule.activities.map((activity, idx) => (
-                          <li key={idx}>• {activity}</li>
-                        ))}
-                        <li>• Departure: {program.schedule.departure}</li>
-                      </ul>
-                    </div>
-                  )}
-
-                  {/* Meals Included */}
-                  {program.meals && program.meals.length > 0 && (
-                    <div className="mb-4">
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                        Meals Included
+                        Schedule
                       </h4>
                       <p className="text-sm text-gray-700 dark:text-gray-300">
-                        {program.meals.join(', ')}
+                        {program.schedule}
                       </p>
                     </div>
                   )}
+
+                  {/* Features */}
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Features
+                    </h4>
+                    <ul className="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+                      {program.features.map((feature: string, idx: number) => (
+                        <li key={idx}>• {feature}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               ))}
             </div>
