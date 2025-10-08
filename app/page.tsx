@@ -275,16 +275,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Nature/Landscape Hero Section - 4K Background Image */}
-        {/*
-          TO ADD YOUR 4K IMAGE:
-          1. Place your 4K nature/landscape image in the /public directory (e.g., /public/nature-background.jpg)
-          2. Replace the background gradient below with: style={{ backgroundImage: 'url(/nature-background.jpg)' }}
-          3. Adjust the overlay opacity if needed for better text readability
-        */}
+        {/* Nature/Landscape Hero Section - Forest Background */}
         <section
-          className="relative min-h-[500px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-daycare-green/30 via-daycare-blue/20 to-daycare-yellow/30"
+          className="relative min-h-[500px] flex items-center justify-center overflow-hidden"
           style={{
+            backgroundImage: 'url(/Forest.webp)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
