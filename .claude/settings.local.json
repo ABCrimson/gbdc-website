@@ -20,7 +20,8 @@
       "Bash(done)",
       "Bash(powershell:*)",
       "Bash(bunx shadcn@latest add:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Read(//c/Users/alber/Downloads/**)"
     ],
     "deny": [],
     "ask": []

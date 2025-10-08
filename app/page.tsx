@@ -62,15 +62,39 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: '🎓', title: 'Licensed & Certified', desc: 'State approved facility' },
-                  { icon: '👨‍👩‍👧', title: 'Experienced Staff', desc: '20+ years combined' },
-                  { icon: '🍎', title: 'Nutritious Meals', desc: 'Fresh daily menu' },
-                  { icon: '🎨', title: 'Educational Programs', desc: 'Age-appropriate curriculum' },
+                  {
+                    icon: <svg className="w-8 h-8 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>,
+                    title: 'Licensed & Certified',
+                    desc: 'State approved facility'
+                  },
+                  {
+                    icon: <svg className="w-8 h-8 text-daycare-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>,
+                    title: 'Experienced Staff',
+                    desc: '20+ years combined'
+                  },
+                  {
+                    icon: <svg className="w-8 h-8 text-daycare-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>,
+                    title: 'Nutritious Meals',
+                    desc: 'Fresh daily menu'
+                  },
+                  {
+                    icon: <svg className="w-8 h-8 text-daycare-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                    </svg>,
+                    title: 'Educational Programs',
+                    desc: 'Age-appropriate curriculum'
+                  },
                 ].map((item, i) => (
-                  <div key={i} className="group relative overflow-hidden rounded-2xl bg-card border p-6 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1">
-                    <div className="text-4xl mb-3">{item.icon}</div>
+                  <div key={i} className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <div className="mb-3">{item.icon}</div>
                     <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
                   </div>
                 ))}
               </div>
