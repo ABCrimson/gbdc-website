@@ -17,13 +17,12 @@ export const gradientBlueTealSimple = 'bg-gradient-to-br from-[#0B7BA7] via-[#1B
 
 /**
  * Common decorative background elements with gradient orbs
+ * CSS classes for creating gradient orb decorations
  */
-export const gradientOrbsOverlay = (
-  <>
-    <div className="absolute top-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float" />
-    <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse-slow" />
-  </>
-)
+export const gradientOrbsOverlay = {
+  orb1: 'absolute top-0 right-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float',
+  orb2: 'absolute bottom-0 left-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl animate-pulse-slow'
+}
 
 /**
  * Grid pattern overlay for backgrounds

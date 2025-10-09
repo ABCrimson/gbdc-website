@@ -280,5 +280,14 @@
     "privacyPolicy": "Політика Конфіденційності",
     "termsOfService": "Умови Використання",
     "allRightsReserved": "Всі права захищено"
+  },
+  "accessibility": {
+    "skipToMain": "Перейти до основного вмісту"
+  },
+  "errors": {
+    "pageNotFound": "Сторінка Не Знайдена",
+    "pageNotFoundDescription": "Сторінка, яку ви шукаєте, не існує. Можливо, вона була переміщена або видалена.",
+    "returnHome": "Повернутися на Головну",
+    "contactUs": "Зв'яжіться з Нами"
   }
 }

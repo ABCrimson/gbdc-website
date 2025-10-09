@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation'
 import { Toaster } from 'react-hot-toast'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { SkipLink } from '@/components/ui/skip-link'
+import { ErrorBoundary } from '@/components/error-boundary'
 import { routing } from '@/i18n/routing'
 import '../globals.css'
 
@@ -63,16 +64,62 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ChildCare',
+              name: 'Great Beginnings Day Care Center',
+              description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL',
+              url: 'https://greatbeginningsdaycare.com',
+              telephone: '(630) 894-3440',
+              email: 'gbdcroselle@gmail.com',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '757 E Nerge Rd',
+                addressLocality: 'Roselle',
+                addressRegion: 'IL',
+                postalCode: '60172',
+                addressCountry: 'US',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 41.9847,
+                longitude: -88.0797,
+              },
+              openingHoursSpecification: [
+                {
+                  '@type': 'OpeningHoursSpecification',
+                  dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                  opens: '06:00',
+                  closes: '18:00',
+                },
+              ],
+              priceRange: '$$',
+              image: 'https://greatbeginningsdaycare.com/DaycareIcon.webp',
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.8',
+                reviewCount: '50',
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={inter.className}>
-        <SkipLink />
         <NextIntlClientProvider messages={messages}>
+          <SkipLink />
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ErrorBoundary>
+              {children}
+            </ErrorBoundary>
             <Toaster
               position="top-right"
               toastOptions={{

@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 import Image from 'next/image'
 
 interface Photo {
@@ -17,13 +16,14 @@ export function PhotoGallery() {
   useEffect(() => {
     async function loadPhotos() {
       try {
-        // Set options FIRST (required for @googlemaps/js-api-loader 2.0.1)
+        // Using @googlemaps/js-api-loader 2.0.1 functional API
+        const { setOptions, importLibrary } = await import('@googlemaps/js-api-loader')
+
         setOptions({
-          apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-          version: 'weekly',
+          key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+          v: 'weekly',
         })
 
-        // Using @googlemaps/js-api-loader 2.0.1 functional API
         const { PlacesService } = await importLibrary('places') as any
         const { Map } = await importLibrary('maps') as any
 

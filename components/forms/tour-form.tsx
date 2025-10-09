@@ -49,20 +49,30 @@ const ageOptions = [
 ]
 
 export function TourForm() {
-  // React 19 useActionState for better form state management
+  // React 19 useActionState + toast.promise() for better UX
   const [state, formAction, isPending] = useActionState(
     async (prevState: any, formData: FormData) => {
-      const result = await scheduleTour(formData)
+      try {
+        // Wrap Server Action to convert result object pattern to rejecting promise
+        const result = await toast.promise(
+          (async () => {
+            const res = await scheduleTour(formData)
+            if (res.error) throw new Error(res.error)
+            return res
+          })(),
+          {
+            loading: 'Scheduling your tour...',
+            success: (data) => data?.message || "Tour scheduled successfully! We'll contact you soon.",
+            error: (err) => err.message || 'Failed to schedule tour.',
+          }
+        )
 
-      if (result.error) {
-        toast.error(result.error)
-        return { error: result.error, success: false }
+        return { success: true, error: undefined, message: result.message }
+      } catch (err: any) {
+        return { error: err.message, success: false }
       }
-
-      toast.success(result.message || "Tour scheduled successfully! We'll contact you soon.")
-      return { success: true, error: null, message: result.message }
     },
-    { success: false, error: null, message: null }
+    { success: false, error: undefined, message: undefined }
   )
 
   // Generate minimum date (tomorrow) using date-fns 4.1.0

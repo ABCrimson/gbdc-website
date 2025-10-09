@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { Button } from '@/components/ui/button'
@@ -40,10 +41,13 @@ export function Header() {
         <Link href="/" className="group flex items-center space-x-3 transition-transform hover:scale-105">
           {/* Logo Icon */}
           <div className="relative w-10 h-10 flex-shrink-0">
-            <img
+            <Image
               src="/Apple.webp"
               alt="Great Beginnings Day Care"
-              className="w-full h-full object-contain rounded-lg"
+              width={40}
+              height={40}
+              className="object-contain rounded-lg"
+              priority
             />
           </div>
 

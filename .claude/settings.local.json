@@ -23,7 +23,19 @@
       "Bash(taskkill:*)",
       "Read(//c/Users/alber/Downloads/**)",
       "WebFetch(domain:gbdcroselle.com)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(wc:*)",
+      "WebFetch(domain:next-intl.dev)",
+      "Bash(if [ -f global-error.tsx ])",
+      "Bash(then mv global-error.tsx \"[locale]/\")",
+      "Bash(fi)",
+      "Bash(tree:*)",
+      "Bash(npm run build:*)",
+      "Bash(find:*)",
+      "Bash(git restore:*)",
+      "Bash(bun pm ls:*)",
+      "Bash(npx tsc:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

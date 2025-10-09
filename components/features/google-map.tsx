@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 
 // Great Beginnings Day Care Center - 757 E Nerge Rd, Roselle, IL 60172
 const GBDC_LOCATION = { lat: 41.9847, lng: -88.0797 }
@@ -14,23 +13,24 @@ export function GoogleMap() {
   useEffect(() => {
     async function initMap() {
       try {
-        // Set options FIRST (required for @googlemaps/js-api-loader 2.0.1)
+        // Using @googlemaps/js-api-loader 2.0.1 functional API
+        const { setOptions, importLibrary } = await import('@googlemaps/js-api-loader')
+
         setOptions({
-          apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
-          version: 'weekly',
+          key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
+          v: 'weekly',
         })
 
-        // Using @googlemaps/js-api-loader 2.0.1 with functional API
-        const { Map } = await importLibrary('maps') as any
-        const { AdvancedMarkerElement } = await importLibrary('marker') as any
+        // Load and wait for Google Maps libraries
+        const google = await importLibrary('maps') as any
 
         if (!mapRef.current) return
 
         // Create map
-        const map = new Map(mapRef.current, {
+        const map = new google.Map(mapRef.current, {
           zoom: 16,
           center: GBDC_LOCATION,
-          mapId: 'GBDC_MAP', // Required for AdvancedMarkerElement
+          mapId: process.env.NEXT_PUBLIC_GOOGLE_MAP_ID || undefined,
           disableDefaultUI: false,
           zoomControl: true,
           mapTypeControl: false,
@@ -38,12 +38,22 @@ export function GoogleMap() {
           fullscreenControl: true,
         })
 
-        // Create advanced marker
-        new AdvancedMarkerElement({
-          map,
-          position: GBDC_LOCATION,
-          title: 'Great Beginnings Day Care Center - ' + GBDC_ADDRESS,
-        })
+        // Use Advanced Marker if Map ID is configured, otherwise use classic Marker
+        if (process.env.NEXT_PUBLIC_GOOGLE_MAP_ID) {
+          const markerLib = await importLibrary('marker') as any
+          new markerLib.AdvancedMarkerElement({
+            map,
+            position: GBDC_LOCATION,
+            title: 'Great Beginnings Day Care Center - ' + GBDC_ADDRESS,
+          })
+        } else {
+          // Fallback to classic marker if no Map ID
+          new google.Marker({
+            map,
+            position: GBDC_LOCATION,
+            title: 'Great Beginnings Day Care Center - ' + GBDC_ADDRESS,
+          })
+        }
       } catch (err) {
         console.error('Error loading Google Maps:', err)
         setError('Failed to load map. Please check your API key.')

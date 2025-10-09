@@ -280,5 +280,14 @@
     "privacyPolicy": "Política de Privacidad",
     "termsOfService": "Términos de Servicio",
     "allRightsReserved": "Todos los derechos reservados"
+  },
+  "accessibility": {
+    "skipToMain": "Saltar al contenido principal"
+  },
+  "errors": {
+    "pageNotFound": "Página No Encontrada",
+    "pageNotFoundDescription": "La página que busca no existe. Es posible que haya sido movida o eliminada.",
+    "returnHome": "Volver al Inicio",
+    "contactUs": "Contáctenos"
   }
 }

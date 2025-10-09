@@ -283,5 +283,11 @@
   },
   "accessibility": {
     "skipToMain": "Skip to main content"
+  },
+  "errors": {
+    "pageNotFound": "Page Not Found",
+    "pageNotFoundDescription": "The page you're looking for doesn't exist. It may have been moved or deleted.",
+    "returnHome": "Return Home",
+    "contactUs": "Contact Us"
   }
 }

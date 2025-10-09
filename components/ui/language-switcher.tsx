@@ -4,7 +4,7 @@ import { usePathname, useRouter } from '@/i18n/navigation'
 import { useParams } from 'next/navigation'
 import { useTransition } from 'react'
 import { Button } from '@/components/ui/button'
-import { locales, localeNames } from '@/i18n.ts'
+import { locales, localeNames } from '@/i18n'
 
 const languages = [
   { code: 'en', name: localeNames.en, flag: '🇺🇸' },

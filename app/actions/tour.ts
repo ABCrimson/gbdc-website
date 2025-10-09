@@ -4,6 +4,7 @@ import { headers } from 'next/headers'
 import { revalidatePath } from 'next/cache'
 import { parseISO, isValid, isFuture, addHours, isWeekend, format } from 'date-fns'
 import { formRateLimit, getClientId, getTimeRemaining } from '@/lib/rate-limit'
+import { tourFormSchema } from '@/lib/validations/tour'
 
 export async function scheduleTour(formData: FormData) {
   // Check rate limit
@@ -17,18 +18,27 @@ export async function scheduleTour(formData: FormData) {
     }
   }
 
-  // Validate required fields
-  const parentName = formData.get('parentName')?.toString()
-  const childAge = formData.get('childAge')?.toString()
-  const preferredDate = formData.get('preferredDate')?.toString()
-  const phone = formData.get('phone')?.toString()
-  const email = formData.get('email')?.toString()
-
-  if (!parentName || !childAge || !preferredDate || !phone || !email) {
-    return { error: 'All fields are required' }
+  // Extract form data
+  const data = {
+    parentName: formData.get('parentName')?.toString() || '',
+    email: formData.get('email')?.toString() || '',
+    phone: formData.get('phone')?.toString() || '',
+    childAge: formData.get('childAge')?.toString() || '',
+    preferredDate: formData.get('preferredDate')?.toString() || '',
+    notes: formData.get('notes')?.toString() || '',
   }
 
-  // Validate date format and value
+  // Validate with Zod
+  const result = tourFormSchema.safeParse(data)
+
+  if (!result.success) {
+    const firstError = result.error.issues[0]
+    return { error: firstError.message }
+  }
+
+  const { parentName, email, phone, childAge, preferredDate, notes } = result.data
+
+  // Additional business logic validation
   const selectedDate = parseISO(preferredDate)
 
   if (!isValid(selectedDate)) {
@@ -70,13 +80,15 @@ export async function scheduleTour(formData: FormData) {
           preferred_date: preferredDate,
           phone: phone,
           email: email,
-          notes: formData.get('notes')?.toString() || 'None',
+          notes: notes || 'None',
         }
       })
     })
 
     if (!response.ok) {
-      throw new Error('Failed to send tour request')
+      const errorData = await response.text()
+      console.error('EmailJS API error:', response.status, errorData)
+      throw new Error(`EmailJS error (${response.status}): ${errorData}`)
     }
 
     revalidatePath('/tour')
@@ -86,6 +98,6 @@ export async function scheduleTour(formData: FormData) {
     }
   } catch (error) {
     console.error('Tour scheduling error:', error)
-    return { error: 'Failed to schedule tour. Please try again or call us directly.' }
+    return { error: error instanceof Error ? error.message : 'Failed to schedule tour. Please try again or call us directly.' }
   }
 }

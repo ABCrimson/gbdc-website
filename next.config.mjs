@@ -7,6 +7,7 @@ const nextConfig = {
   reactCompiler: true,
   experimental: {
     ppr: 'incremental', // Partial prerendering
+    optimizePackageImports: ['@googlemaps/js-api-loader', 'react-hot-toast', 'date-fns'],
   },
   turbopack: {
     rules: {
@@ -31,6 +32,10 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  productionBrowserSourceMaps: false,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
+  },
 }
 
 export default withNextIntl(nextConfig)
