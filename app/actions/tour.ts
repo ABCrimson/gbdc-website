@@ -2,7 +2,7 @@
 
 import { headers } from 'next/headers'
 import { revalidatePath } from 'next/cache'
-import { parseISO, isValid, isFuture, addHours, isWeekend, format } from 'date-fns'
+import { parseISO, isValid, isFuture, addHours, isWeekend } from 'date-fns'
 import { formRateLimit, getClientId, getTimeRemaining } from '@/lib/rate-limit'
 import { tourFormSchema } from '@/lib/validations/tour'
 

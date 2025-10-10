@@ -34,10 +34,12 @@ function SubmitButton() {
   )
 }
 
+type FormState = { success: boolean; error?: string }
+
 export function ContactForm() {
   // React 19 useActionState + toast.promise() for better UX
   const [state, formAction, isPending] = useActionState(
-    async (prevState: any, formData: FormData) => {
+    async (_prevState: FormState, formData: FormData): Promise<FormState> => {
       try {
         // Wrap Server Action to convert result object pattern to rejecting promise
         await toast.promise(
@@ -54,8 +56,9 @@ export function ContactForm() {
         )
 
         return { success: true, error: undefined }
-      } catch (err: any) {
-        return { error: err.message, success: false }
+      } catch (err) {
+        const error = err instanceof Error ? err.message : 'Failed to send message'
+        return { error, success: false }
       }
     },
     { success: false, error: undefined }

@@ -6,20 +6,6 @@ import programs from '@/data/programs.json'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 
-interface Program {
-  id: string
-  name: string
-  ageRange: string
-  description: string
-  features: string[]
-  schedule?: string
-  pricing?: {
-    weeklyRate: string
-    dailyRate: string
-    note: string
-  }
-}
-
 // Color theme for each program
 const programColors: Record<string, string> = {
   'infants': '#EC4899',           // Pink

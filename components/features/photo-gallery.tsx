@@ -24,8 +24,8 @@ export function PhotoGallery() {
           v: 'weekly',
         })
 
-        const { PlacesService } = await importLibrary('places') as any
-        const { Map } = await importLibrary('maps') as any
+        const { PlacesService } = await importLibrary('places') as { PlacesService: typeof google.maps.places.PlacesService }
+        const { Map } = await importLibrary('maps') as { Map: typeof google.maps.Map }
 
         // PlacesService requires a map element
         const mapDiv = document.createElement('div')
@@ -44,9 +44,9 @@ export function PhotoGallery() {
             placeId: placeId,
             fields: ['photos', 'name']
           },
-          (place: any, status: any) => {
+          (place: google.maps.places.PlaceResult | null, status: google.maps.places.PlacesServiceStatus) => {
             if (status === 'OK' && place?.photos) {
-              const photoUrls = place.photos.slice(0, 12).map((photo: any) => ({
+              const photoUrls = place.photos.slice(0, 12).map((photo: google.maps.places.PlacePhoto) => ({
                 url: photo.getUrl({ maxWidth: 1200, maxHeight: 800 }),
                 attribution: photo.html_attributions?.[0] || ''
               }))

@@ -22,7 +22,8 @@ export function GoogleMap() {
         })
 
         // Load and wait for Google Maps libraries
-        const google = await importLibrary('maps') as any
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const google = (await importLibrary('maps')) as any
 
         if (!mapRef.current) return
 
@@ -40,7 +41,8 @@ export function GoogleMap() {
 
         // Use Advanced Marker if Map ID is configured, otherwise use classic Marker
         if (process.env.NEXT_PUBLIC_GOOGLE_MAP_ID) {
-          const markerLib = await importLibrary('marker') as any
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const markerLib = (await importLibrary('marker')) as any
           new markerLib.AdvancedMarkerElement({
             map,
             position: GBDC_LOCATION,

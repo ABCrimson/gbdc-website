@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { Toaster } from 'react-hot-toast'
+import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { SkipLink } from '@/components/ui/skip-link'
 import { ErrorBoundary } from '@/components/error-boundary'
@@ -13,6 +14,7 @@ import '../globals.css'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://greatbeginningsdaycare.com'),
   title: {
     default: 'Great Beginnings Day Care',
     template: '%s | Great Beginnings Day Care',
@@ -32,6 +34,20 @@ export const metadata: Metadata = {
     siteName: 'Great Beginnings Day Care',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Great Beginnings Day Care - Quality childcare for ages 6 weeks to 12 years',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Great Beginnings Day Care',
+    description: 'Quality childcare for ages 6 weeks to 12 years in Roselle, IL',
+    images: ['/opengraph-image'],
   },
 }
 
@@ -51,7 +67,8 @@ export default async function LocaleLayout({
   const { locale } = await params
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  type Locale = (typeof routing.locales)[number]
+  if (!routing.locales.includes(locale as Locale)) {
     notFound()
   }
 
@@ -146,6 +163,7 @@ export default async function LocaleLayout({
             />
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   )

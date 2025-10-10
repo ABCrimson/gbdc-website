@@ -48,10 +48,12 @@ const ageOptions = [
   { value: '8-12-years', label: '8 - 12 years (School Age)' },
 ]
 
+type FormState = { success: boolean; error?: string; message?: string }
+
 export function TourForm() {
   // React 19 useActionState + toast.promise() for better UX
   const [state, formAction, isPending] = useActionState(
-    async (prevState: any, formData: FormData) => {
+    async (_prevState: FormState, formData: FormData): Promise<FormState> => {
       try {
         // Wrap Server Action to convert result object pattern to rejecting promise
         const result = await toast.promise(
@@ -68,8 +70,9 @@ export function TourForm() {
         )
 
         return { success: true, error: undefined, message: result.message }
-      } catch (err: any) {
-        return { error: err.message, success: false }
+      } catch (err) {
+        const error = err instanceof Error ? err.message : 'Failed to schedule tour'
+        return { error, success: false }
       }
     },
     { success: false, error: undefined, message: undefined }
